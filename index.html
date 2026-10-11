@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#58cc02">
+<meta name="theme-color" content="#f3efe6">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0;font-size:14px}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
@@ -14,24 +14,32 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>KonichiWhat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Noto+Sans+JP:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <style>
 /* Layout: single centered column (max 560px), app-style top bar, sliding feedback sheet at bottom */
 :root{
-  --bg:#ffffff; --surface:#ffffff; --sunk:#f7f7f7; --line:#e5e5e5; --fg:#3c3c3c; --muted:#8a8f93;
-  --green:#58cc02; --green-d:#58a700; --green-soft:#d7ffb8; --green-ink:#58a700;
-  --red:#ff4b4b; --red-d:#ea2b2b; --red-soft:#ffdfe0; --red-ink:#ea2b2b;
-  --blue:#1cb0f6; --blue-d:#1899d6; --blue-soft:#ddf4ff;
-  --gold:#ffc800; --gold-d:#e5a400; --on-accent:#ffffff;
-  --f-ui:"Nunito",ui-rounded,"SF Pro Rounded",system-ui,sans-serif;
-  --f-jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --bg:#f3efe6; --surface:#fbf9f4; --sunk:#ebe5d8; --line:#ddd5c6; --fg:#1c1c1e; --muted:#7d776d;
+  --green:#6e8b3d; --green-d:#56702d; --green-soft:#e5ebd8; --green-ink:#4f6b2a;
+  --red:#1c1c1e; --red-d:#000000; --red-soft:#e6e2da; --red-ink:#1c1c1e;
+  --blue:#2b4c7e; --blue-d:#1f3a63; --blue-soft:#dfe5ef;
+  --gold:#b8892e; --gold-d:#8f6a20; --on-accent:#ffffff;
+  --shu:#d23b2a; --shu-soft:#f7e1dc; --ink:#1c1c1e;
+  --tex:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .38 0 0 0 .06 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  --f-ui:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",system-ui,sans-serif;
+  --f-jp:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#131f24; --surface:#131f24; --sunk:#1c2b31; --line:#37464f; --fg:#f1f7fb; --muted:#8b9aa3;
-  --green-soft:#1f3a1a; --green-ink:#79d634; --red-soft:#3a1f22; --red-ink:#ff7a7a; --blue-soft:#163646; color-scheme:dark}}
+  --bg:#121110; --surface:#2a2724; --sunk:#201e1c; --line:#4a453f; --fg:#f1ebdf; --muted:#a39b8f;
+  --green:#7f9e4a; --green-d:#6e8b3d; --green-soft:#28301c; --green-ink:#a9c472;
+  --red:#e9e3d6; --red-d:#c9c2b4; --red-soft:#34302c; --red-ink:#e9e3d6;
+  --blue:#8fa9d6; --blue-d:#6f89b6; --blue-soft:#1f2a3c;
+  --gold:#d0a24a; --gold-d:#d0a24a; --shu:#e0533f; --shu-soft:#3a201b; --ink:#e9e3d6; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#131f24; --surface:#131f24; --sunk:#1c2b31; --line:#37464f; --fg:#f1f7fb; --muted:#8b9aa3;
-  --green-soft:#1f3a1a; --green-ink:#79d634; --red-soft:#3a1f22; --red-ink:#ff7a7a; --blue-soft:#163646; color-scheme:dark}
+  --bg:#121110; --surface:#2a2724; --sunk:#201e1c; --line:#4a453f; --fg:#f1ebdf; --muted:#a39b8f;
+  --green:#7f9e4a; --green-d:#6e8b3d; --green-soft:#28301c; --green-ink:#a9c472;
+  --red:#e9e3d6; --red-d:#c9c2b4; --red-soft:#34302c; --red-ink:#e9e3d6;
+  --blue:#8fa9d6; --blue-d:#6f89b6; --blue-soft:#1f2a3c;
+  --gold:#d0a24a; --gold-d:#d0a24a; --shu:#e0533f; --shu-soft:#3a201b; --ink:#e9e3d6; color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:16px;-webkit-font-smoothing:antialiased}
@@ -375,6 +383,182 @@ svg{flex:none}
 .okana{display:block;font-size:12px;font-weight:700;margin-top:2px}
 .opt.right .okana,.opt.wrong .okana,.opt.sel .okana{color:inherit}
 .tip.bd svg{color:var(--green)}
+
+/* ===================== 墨と朱 Sumi & Shu layer ===================== */
+body{background-color:var(--bg);background-image:var(--tex);background-attachment:fixed}
+h1,h2,h3,h4,.brand,.hero-jp{font-family:var(--f-ui)}
+.btn{border-radius:6px;border:1.5px solid var(--line);min-height:48px;font-weight:700;font-size:14px;letter-spacing:.1em;background:var(--surface)}
+.btn:active:not(:disabled){transform:translateY(1px);border-bottom-width:1.5px}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.go{background:var(--green);border-color:var(--green);color:#fff}
+.btn.danger{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.blue{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn:disabled{background:var(--line);border-color:var(--line);color:var(--muted)}
+.sheet.good .btn.go{background:var(--green)}
+.deck,.pack,.tile3,.jmini,.kc,.opt,.speak,.kana-btn,.goal,.pack-head,.trip,.arow,.spage,.q-prompt,.seg,.tile,.ref-btn,.modal-panel,.face{border-width:1.5px!important}
+.deck:active,.pack:active,.tile3:active,.jmini:active,.kc:active,.opt:active:not(:disabled),.speak:active,.kana-btn:active{transform:translateY(1px)}
+.deck,.pack,.tile3,.jmini,.goal,.pack-head,.trip,.arow,.spage,.q-prompt,.modal-panel,.tile{border-radius:8px}
+.face{border-radius:10px;background:var(--surface)}
+.opt,.kc,.speak{border-radius:6px}.kana-btn{border-radius:99px}
+.seg{border-radius:8px;border-width:1.5px}.seg button{border-radius:6px}.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.badge,.pack-badge,.t3i,.ag-k{border-radius:5px;box-shadow:none;outline:1.5px solid rgba(255,255,255,.55);outline-offset:-5px;font-weight:900}
+.brand{color:var(--fg);font-weight:900;letter-spacing:-.02em}.brand span{color:var(--shu)}.brand b{color:var(--gold)}
+.chip.fire{color:var(--shu)}.chip.xp{color:var(--gold)}
+.hearts{color:var(--shu)}
+.bar{height:7px;border-radius:4px}.bar>i{background:var(--shu);border-radius:4px}.bar>i::after{display:none}.bar.gold>i{background:var(--shu)}
+.aprog .bar>i{background:var(--ink)}
+.pbar{height:7px}.pbar.big{height:10px}.deck .pbar{height:6px}
+.pbar .pm{background:var(--shu)}.pbar .pl{background:var(--shu);opacity:.32}
+.legend .dm,.legend .dl{background:var(--shu)}.legend .dl{opacity:.32}
+.legend .pct-big,.pmeta b{color:var(--shu)}
+.combo{color:var(--shu)}
+.toast{background:var(--shu);box-shadow:0 4px 0 #9e2a1d;border-radius:8px}
+.toast.gold{background:var(--gold);box-shadow:0 4px 0 #7a5a18}
+.float.hurt{color:var(--shu)}
+.float.don{color:var(--green-ink);font-size:26px;transform:translate(-50%,0) rotate(-10deg)}
+.float.kon{color:var(--muted);font-size:24px}
+.vig{box-shadow:inset 0 0 0 4px var(--ink),inset 0 0 120px 10px rgba(28,28,30,.32)}
+.opt.wrong{text-decoration:line-through;text-decoration-thickness:2px}
+.card-wrap.glow .face{border-color:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
+.card-wrap.burn .face{border-color:var(--ink);box-shadow:0 0 0 4px var(--red-soft)}
+.sheet{border-top:1.5px solid var(--line)}
+.sheet.good{border-top:2px solid var(--green)}.sheet.bad{border-top:2px solid var(--ink)}
+.fb .dot{width:68px;height:68px;background:var(--surface);overflow:visible}
+.fb .dot svg{width:60px;height:auto}
+.fb h4{font-weight:900}
+.jm-track>i{background:var(--shu)}.jm-track u.on{border-color:var(--shu);background:var(--shu)}
+.jm-train,.trip-big{color:var(--shu)}.cd,.here{color:var(--shu);background:var(--shu-soft)}
+.stop.on .dot{border-color:var(--shu);background:var(--shu)}.stop.cur .dot{box-shadow:0 0 0 5px var(--shu-soft)}.rail .seg b{background:var(--shu)}
+.notif{background:#1c1c1e;border-radius:10px}.n-ach .nt small{color:#d0a24a}
+.tile{border-width:1.5px}
+.tile.y{border-color:var(--gold)}.tile.y b{background:var(--gold)}.tile.y span{color:var(--gold-d)}
+.tile.g{border-color:var(--green)}.tile.g b{background:var(--green)}.tile.g span{color:var(--green-ink)}
+.tile.o{border-color:var(--shu)}.tile.o b{background:var(--shu)}.tile.o span{color:var(--shu)}
+.ribbon{background:var(--shu);color:#fff}
+.spage.full{border-color:var(--shu)}
+.arow.on{border-color:color-mix(in srgb,var(--gold) 45%,var(--line))}
+.tier{border-width:1.5px;border-radius:4px}
+.kc:hover{border-color:var(--ink)}
+.pack:hover{border-color:var(--ink)}
+.cd.unset{color:var(--muted);background:var(--sunk)}
+/* hanamaru + daruma */
+.hm{color:var(--green);display:block}
+.hm path{stroke-dasharray:1;stroke-dashoffset:1;animation:hmdraw .38s ease-out forwards}
+.hm .d2{animation-delay:.28s}.hm .d3{animation-delay:.5s}.hm .d4{animation-delay:.62s}.hm .rib{stroke-dasharray:none;stroke-dashoffset:0;animation:pop .4s .7s backwards}
+@keyframes hmdraw{to{stroke-dashoffset:0}}
+.dar{display:inline-block;transform-origin:50% 88%;animation:wob 1.15s cubic-bezier(.3,.6,.4,1)}
+@keyframes wob{0%{transform:rotate(0)}16%{transform:rotate(-28deg)}34%{transform:rotate(16deg)}52%{transform:rotate(-9deg)}70%{transform:rotate(5deg)}86%{transform:rotate(-2deg)}100%{transform:rotate(0)}}
+.dar.roll{animation:roll 1.6s cubic-bezier(.3,.6,.4,1)}
+@keyframes roll{0%{transform:rotate(0)}25%{transform:rotate(-95deg)}45%{transform:rotate(-80deg)}70%{transform:rotate(12deg)}85%{transform:rotate(-5deg)}100%{transform:rotate(0)}}
+.markpop{position:fixed;z-index:62;pointer-events:none;transform:translate(-50%,-50%);animation:mpop 1.05s ease forwards;filter:drop-shadow(0 6px 14px rgba(0,0,0,.12))}
+.markpop .hm,.markpop .dar{background:var(--surface);border-radius:50%;padding:12px}
+@keyframes mpop{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}14%{opacity:1;transform:translate(-50%,-50%) scale(1.04)}24%{transform:translate(-50%,-50%) scale(1)}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-62%)}}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hero-dar{flex:none;width:72px;cursor:default}
+.hero-dar svg{width:72px;height:auto;display:block}
+/* results */
+.done{gap:16px}
+.done h2{color:var(--fg);font-size:28px}
+.done .yoku svg{width:170px;height:170px;display:block;animation:stampin .45s cubic-bezier(.2,1.4,.5,1) backwards}
+@keyframes stampin{0%{opacity:0;transform:scale(1.8) rotate(8deg)}100%{opacity:1;transform:none}}
+.done .bouq{margin-top:-34px}.done .bouq .hm svg{width:118px;height:auto}
+.done.fail h2{color:var(--fg);font-size:36px;letter-spacing:.04em}
+.kotowaza{margin:-6px 0 0;color:var(--muted);font-weight:700;line-height:1.5}
+.done .dbig svg{width:150px;height:auto}
+@media (prefers-reduced-motion:reduce){.hm path{stroke-dashoffset:0!important}}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(.deck,.pack,.tile3,.jmini,.goal,.pack-head,.trip,.arow,.spage,.q-prompt,.face,.opt,.kc,.tile,.newst){box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 2px 8px rgba(0,0,0,.35)}}
+:root[data-theme="dark"] :is(.deck,.pack,.tile3,.jmini,.goal,.pack-head,.trip,.arow,.spage,.q-prompt,.face,.opt,.kc,.tile,.newst){box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 2px 8px rgba(0,0,0,.35)}
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(.badge,.pack-badge,.t3i,.ag-k)[style*="#1c1c1e"]{background:#4a453f!important}}
+:root[data-theme="dark"] :is(.badge,.pack-badge,.t3i,.ag-k)[style*="#1c1c1e"]{background:#4a453f!important}
+
+/* ===== お守り collector's book + ガチャ ===== */
+.shelf{display:grid;gap:10px;background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:14px}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 6px}
+@media (max-width:420px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+.cslot{border:0;background:none;padding:4px 2px;display:grid;justify-items:center;align-content:start;gap:4px;font-size:11px;font-weight:700;color:var(--muted);line-height:1.25;text-align:center;border-radius:8px;min-width:0}
+.cslot.on{color:var(--fg)}
+.cslot svg{width:100%;max-width:84px;height:auto;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18));transition:transform .15s}
+.cslot:hover svg{transform:translateY(-3px) rotate(-2deg)}
+.cslot span{overflow-wrap:anywhere}
+.mt{width:10px;height:10px;border-radius:3px;display:inline-block}.mt-b{background:#b9824a}.mt-s{background:#b9c0c7}.mt-g{background:#c8962f}.mt-p{background:linear-gradient(135deg,#ffc4e3,#b8ecff,#d4ffc2,#dcc4ff)}
+.cdet{justify-items:center;text-align:center}.cdet .modal-head{width:100%}
+.cbig svg,.g-charm svg{width:160px;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.28))}
+.cdet h2{font-size:22px;font-weight:900;margin:0}.cdet p{color:var(--muted);line-height:1.5;margin:0;max-width:34ch}.cdet .aprog{width:100%}.cwhen{color:var(--muted);font-weight:700}
+.t-b,.t-s,.t-g,.t-p{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;border:0!important;padding:0!important}
+.t-b{color:#9c6a38}.t-s{color:#7d858d}.t-g{color:var(--gold)}
+.t-p{background:linear-gradient(90deg,#e05fa0,#3aa3d6,#5aa83c,#c99a1a,#8a5ad6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.holo svg{animation:holo 3s ease-in-out infinite}
+@keyframes holo{0%,100%{filter:drop-shadow(0 8px 16px rgba(160,120,255,.4))}50%{filter:drop-shadow(0 8px 20px rgba(80,200,255,.55)) hue-rotate(20deg)}}
+.gacha{position:fixed;inset:0;z-index:90;background:rgba(18,17,16,.9);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:grid;place-items:center;padding:16px;animation:fadein .2s;cursor:pointer}
+.g-stage{position:relative;width:min(360px,100%);min-height:480px;display:grid;justify-items:center;align-content:center}
+.g-cap{width:150px;animation:gdrop .55s cubic-bezier(.3,1.4,.5,1)}
+.g-cap svg{width:100%;overflow:visible;display:block}
+.g-cap .ctop,.g-cap .cbot{transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .5s}
+@keyframes gdrop{0%{transform:translateY(-70vh)}100%{transform:none}}
+.rattle .g-cap{animation:grattle .5s ease-in-out 3}
+@keyframes grattle{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+.g-ono{position:absolute;top:20%;font-weight:900;font-size:32px;color:var(--shu);transform:rotate(-10deg);opacity:0}
+.rattle .g-ono{opacity:1}
+.g-tap{position:absolute;bottom:20%;color:#e9e3d6;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.open .g-tap,.open .g-ono{display:none}
+.open .g-cap{position:absolute;top:28%;pointer-events:none}
+.open .g-cap .ctop{transform:translate(-40px,-70px) rotate(-45deg);opacity:0}
+.open .g-cap .cbot{transform:translate(30px,60px) rotate(30deg);opacity:0}
+.g-rays{position:absolute;left:50%;top:38%;width:440px;height:440px;margin:-220px 0 0 -220px;border-radius:50%;opacity:0;pointer-events:none;
+  background:repeating-conic-gradient(rgba(241,210,122,.55) 0 9deg,transparent 9deg 30deg);-webkit-mask:radial-gradient(circle,#000 25%,transparent 68%);mask:radial-gradient(circle,#000 25%,transparent 68%)}
+.open .g-rays{opacity:1;animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.g-reveal{display:none;position:relative;justify-items:center;text-align:center;gap:8px;background:var(--surface);color:var(--fg);border-radius:12px;padding:18px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.45);cursor:default}
+.open .g-reveal{display:grid;animation:rise2 .5s .12s cubic-bezier(.2,1.3,.4,1) backwards}
+@keyframes rise2{0%{opacity:0;transform:translateY(50px) scale(.8)}100%{opacity:1;transform:none}}
+.g-reveal h2{font-size:22px;font-weight:900;margin:0}.g-reveal p{color:var(--muted);font-weight:500;font-size:14px;line-height:1.45;margin:0;max-width:30ch}
+.g-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-top:6px}
+.gacha.out{animation:fadeout .22s forwards}
+@keyframes fadeout{to{opacity:0}}
+.toast.charm{background:var(--ink);color:var(--bg);font-size:13px;padding:8px 16px;box-shadow:0 6px 20px rgba(0,0,0,.25);top:calc(6px + env(safe-area-inset-top,0px));white-space:nowrap}
+.tchip{background:#c8102e;color:#fff;border-radius:4px;padding:0 6px}
+@media (prefers-reduced-motion:reduce){.holo svg{animation:none}}
+
+/* ===== Desktop / wide monitors (phones untouched) ===== */
+@media (min-width:960px){
+  .app{max-width:1160px;padding-inline:40px;padding-block:32px 140px;gap:24px}
+  /* hub: two columns — you on the left, decks on the right */
+  .app:has(> .hero){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);column-gap:40px;row-gap:22px;align-items:start}
+  .app:has(> .hero) > .top{grid-column:1/-1}
+  .app:has(> .hero) > .hero{grid-column:1;grid-row:2}
+  .app:has(> .hero) > .tiles3{grid-column:1;grid-row:3}
+  .app:has(> .hero) > .jmini{grid-column:1;grid-row:4}
+  .app:has(> .hero) > .label{grid-column:2;grid-row:2;align-self:start}
+  .app:has(> .hero) > .packs{grid-column:2;grid-row:2/span 4;margin-top:30px}
+  .app:has(> .hero) > .foot{grid-column:1/-1;grid-row:6}
+  .hero-jp{font-size:40px}.hero-dar,.hero-dar svg{width:88px}
+  .pack{grid-template-columns:84px 1fr;padding:22px}.pack-badge{width:84px;height:84px;font-size:42px}
+  .pack h3{font-size:22px}
+  /* deck view: topics side by side */
+  .decks{grid-template-columns:1fr 1fr}
+  .pack-head{padding:24px}.pack-head h1{font-size:32px}
+  /* collections fill the width */
+  .cgrid{grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:16px 10px}
+  .cslot svg{max-width:96px}
+  .sgrid{grid-template-columns:repeat(auto-fill,minmax(108px,1fr))}
+  .app:has(.cgrid),.app:has(.sgrid){max-width:1160px}
+  /* reading-width pages */
+  .app:has(.stops),.app:has(.kblock){max-width:880px}
+  .kc{min-height:88px}.kc-ch{font-size:36px}
+  /* lessons stay focused and centred */
+  .app:has(> .sbar),.app:has(> .done){max-width:680px}
+  .card{min-height:440px}.big{font-size:84px}.big.long{font-size:44px}.big.xl{font-size:34px}
+  .q-prompt .big{font-size:64px}
+  .opt{min-height:68px;font-size:17px}
+  .sheet-in{max-width:680px}
+  .modal-panel{max-width:620px}
+}
+@media (min-width:1400px){
+  .app{max-width:1280px}
+  .app:has(> .hero){grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+}
 </style>
 </head>
 <body>
@@ -385,7 +569,7 @@ svg{flex:none}
 <script>
 // [kanji/jp, kana, romaji, meaning, memory hook, where you'll meet it]
 const DECKS=[
-{id:'signs',name:'Station signs',badge:'駅',color:'var(--green)',blurb:'Read the walls before anyone talks',cards:[
+{id:'signs',name:'Station signs',badge:'駅',color:'#d23b2a',blurb:'Read the walls before anyone talks',cards:[
 ['出口','でぐち','deguchi','Exit','出 is two mountains stacked — you climb OUT. 口 = mouth/opening.','Yellow signs at every station: 出口 + a letter/number (A2, 東口)'],
 ['入口','いりぐち','iriguchi','Entrance','入 is a person striding IN, legs apart.','Shop doors, museum gates, station building entrances'],
 ['駅','えき','eki','Station','"Eek! The station is packed." 馬 (horse) on the left = old transport hub.','Every station name: 京都駅, 新宿駅'],
@@ -402,7 +586,7 @@ const DECKS=[
 ['地下鉄','ちかてつ','chikatetsu','Subway','地 earth + 下 under + 鉄 iron = iron under the earth.','Signs leading down to Metro / Toei lines'],
 ['各停','かくてい','kakutei','Local (all stops)','各 = each, 停 = stop → stops at EACH station.','Train type on boards. Opposite: 快速/急行 (rapid/express)'],
 ]},
-{id:'phrases',name:'Question kit',badge:'問',color:'var(--blue)',blurb:'Prefab sentences, swap one word',cards:[
+{id:'phrases',name:'Question kit',badge:'問',color:'#1c1c1e',blurb:'Prefab sentences, swap one word',cards:[
 ['すみません','すみません','sumimasen','Excuse me / sorry','Your universal door opener. Say it before every question.','Getting staff attention; bumping someone on a train'],
 ['〜はどこですか','〜はどこですか','~ wa doko desu ka','Where is ~?','"DOKO" ≈ "dock" — where is the dock?','「トイレはどこですか」 at any counter'],
 ['〜まで行きたいです','〜までいきたいです','~ made ikitai desu','I want to go to ~','"MADE it to ~" — made = up to/until.','Station info desk, showing the place name on your phone'],
@@ -414,7 +598,7 @@ const DECKS=[
 ['ゆっくりお願いします','ゆっくりおねがいします','yukkuri onegai shimasu','Slowly, please','"YUK-kuri — yuck, too fast!"','Pair it with もう一度'],
 ['ありがとうございます','ありがとうございます','arigatō gozaimasu','Thank you (polite)','"Alligator, go s-zaimasu" — polite gator says thanks.','Every interaction, end of every exchange'],
 ]},
-{id:'directions',name:'Directions',badge:'右',color:'#ff9600',blurb:'Catch the keywords in fast answers',cards:[
+{id:'directions',name:'Directions',badge:'右',color:'#2b4c7e',blurb:'Catch the keywords in fast answers',cards:[
 ['右','みぎ','migi','Right','右 contains 口 (mouth) — you eat with your RIGHT hand. "ME-gee, my right."','右側 (right side), 右に曲がる'],
 ['左','ひだり','hidari','Left','左 contains 工 (tool) — the LEFT hand holds the tool. "He-darry was LEFT behind."','左側通行 (keep left) on escalators in Tokyo'],
 ['まっすぐ','まっすぐ','massugu','Straight ahead','"You MUST GO straight."','「まっすぐ行って…」 = "go straight and…"'],
@@ -427,7 +611,7 @@ const DECKS=[
 ['交差点','こうさてん','kōsaten','Intersection','交 = cross, 差 = differ, 点 = point → crossing point.','Named crossings like 渋谷スクランブル交差点'],
 ['向こう','むこう','mukō','Over there / other side','"MOO-kō — the cow is on the other side."','「道の向こう」 across the road'],
 ]},
-{id:'numbers',name:'Numbers & money',badge:'円',color:'#ce82ff',blurb:'Prices, platforms, exits, times',cards:[
+{id:'numbers',name:'Numbers & money',badge:'円',color:'#b8892e',blurb:'Prices, platforms, exits, times',cards:[
 ['一','いち','ichi','1','One stroke. "ITCHY" — scratch with one finger.','1番線, 一日券 (one-day pass)'],
 ['二','に','ni','2','Two strokes. Two KNEEs.','2番出口'],
 ['三','さん','san','3','Three strokes. "SAN": three suns setting.','3番線'],
@@ -444,11 +628,11 @@ const DECKS=[
 ['〜時','〜じ','~ ji','~ o\'clock','"G for Gong" — the clock strikes.','Timetables: 14時20分'],
 ['〜分','〜ふん','~ fun / pun','~ minutes','Minutes are FUN. Sometimes PUN (10分 juppun).','「5分くらい」 about 5 minutes away'],
 ]},
-{id:'konbini',name:'At the till',badge:'袋',color:'#1e9e63',blurb:'Konbini small talk, decoded',cards:[["いらっしゃいませ", "いらっしゃいませ", "irasshaimase", "Welcome! (staff greeting)", "\"Ira-SHY-mase\": staff shout it as you walk in. You don't answer; a small nod is plenty.", "Shouted the moment you enter any shop or restaurant", "いらっしゃい come in (honorific) · ませ polite ending", "いらっしゃい"], ["袋はご利用ですか", "ふくろはごりようですか", "fukuro wa goriyō desu ka", "Do you need a bag?", "袋 FUKURO: \"who could ROll it home without a bag?\" Bags cost a few yen, so they always ask.", "Asked at the till while they scan your items", "袋 bag · は topic · ご利用 use (polite) · ですか ?", "袋"], ["袋はいりません", "ふくろはいりません", "fukuro wa irimasen", "I don't need a bag", "いりません = \"don't need\". IRI-masen: \"eerie, no thanks.\"", "Your answer to 袋はご利用ですか. Shorter and just as polite: 大丈夫です", "袋 bag · は topic · いりません don't need", "不要"], ["温めますか", "あたためますか", "atatamemasu ka", "Shall I heat it up?", "\"A-TA-TA-meh\": hot, hot, hot! They mean the microwave behind the till.", "Asked when you buy a bento, pasta or frozen food", "温め heat up · ます polite · か ?", "温"], ["はい、お願いします", "はい、おねがいします", "hai, onegai shimasu", "Yes, please", "はい (yes) + お願いします (please) = the all-purpose yes to any offer.", "Answer to \"heat it up?\", \"need a bag?\", \"chopsticks?\"", "はい yes · お願いします please", "お願い"], ["大丈夫です", "だいじょうぶです", "daijōbu desu", "No thanks / I'm fine", "\"Dai-JOE-boo\": Joe says he's fine. Literally \"it's OK\", used as a polite no.", "The smoothest way to decline a bag, heating, a receipt or a point card", "大丈夫 all right · です is", "大丈夫"], ["お箸はご利用ですか", "おはしはごりようですか", "ohashi wa goriyō desu ka", "Do you need chopsticks?", "箸 HASHI: \"hush, she brought chopsticks.\" Careful: 橋 (hashi) is a bridge, same sound, different pitch.", "Asked when you buy noodles, bento or salad", "お箸 chopsticks · は topic · ご利用 use · ですか ?", "箸"], ["カードで払えますか", "カードではらえますか", "kādo de haraemasu ka", "Can I pay by card?", "払う HARAU = pay. \"Hara-EMAS-u: harass the card machine.\"", "Most shops take cards and Suica; small ramen shops and temples are often cash only", "カード card · で by means of · 払えます can pay · か ?", "払"], ["現金で", "げんきんで", "genkin de", "In cash", "現金 GENKIN: the \"GENuine KINg\" of money. で = by means of.", "Say it as you hand over notes. On signs, 現金のみ = cash only", "現金 cash · で by / with", "現金"], ["お会計", "おかいけい", "okaikei", "The bill / total", "\"Oh, KAI-KAY\": the total adds up. 会計 = accounts.", "On receipts and in restaurants: お会計お願いします = the bill, please", "お polite · 会計 accounts, total", "会計"], ["ポイントカードはお持ちですか", "ポイントカードはおもちですか", "pointo kādo wa omochi desu ka", "Do you have a point card?", "持つ MOTSU = hold. \"Do you MOCHI (hold) a point card?\" Answer: 大丈夫です.", "Asked at almost every chain-store till", "ポイントカード point card · は topic · お持ち have (polite) · ですか ?", "ポイント"], ["トイレを借りてもいいですか", "トイレをかりてもいいですか", "toire o karite mo ii desu ka", "May I use the toilet?", "借りる KARIRU = borrow. In Japanese you \"borrow\" the toilet, so CARRY it back when you're done.", "Most konbini let customers use the toilet; asking first is polite", "トイレ toilet · を object · 借りても even if I borrow · いいですか is it OK?", "借"], ["レジ袋", "レジぶくろ", "reji-bukuro", "Plastic shopping bag", "レジ (till) + 袋 (bag). ふくろ turns into ぶくろ when joined, a sound change called rendaku.", "Price label at the till: レジ袋 3円", "レジ till · 袋 bag", "レジ袋"]]},
-{id:'menu',name:'Menu words',badge:'麺',color:'#ff9600',blurb:'Read the menu, dodge surprises',cards:[["水", "みず", "mizu", "Water", "\"MEE-zoo\": water at the zoo. Tap water usually arrives free and unasked.", "Self-service water jugs labelled 水 or お冷 (ohiya)", null, null], ["お茶", "おちゃ", "ocha", "Green tea", "茶 CHA sounds like \"chai\". お is the polite prefix.", "Konbini fridges; free at sushi restaurants (powder and a hot-water tap at each seat)", null, null], ["ビール", "ビール", "bīru", "Beer", "Just \"beer\" with Japanese vowels. Katakana means it's a borrowed word.", "Izakaya menus: 生ビール (nama bīru) = draught beer", null, null], ["寿司", "すし", "sushi", "Sushi", "寿 long life + 司 to rule: auspicious kanji picked for their sound.", "Conveyor-belt shops: 回転寿司 (kaiten-zushi)", null, null], ["弁当", "べんとう", "bentō", "Boxed lunch", "\"BENT-oh\": food bent into a box.", "Konbini shelves; 駅弁 (ekiben) = station bento for the Shinkansen", null, null], ["鶏肉", "とりにく", "toriniku", "Chicken", "鶏 TORI bird + 肉 NIKU meat: \"Tory nicked the chicken.\"", "焼き鳥 (yakitori) = grilled chicken skewers", null, null], ["豚肉", "ぶたにく", "butaniku", "Pork", "豚 BUTA = pig: \"BUTT-a\", pig bottoms.", "豚骨 (tonkotsu) ramen = pork-bone broth", null, null], ["牛肉", "ぎゅうにく", "gyūniku", "Beef", "牛 GYŪ = cow. The kanji looks like a cow's head with horns.", "牛丼 (gyūdon) beef bowls at Yoshinoya, Sukiya and Matsuya", null, null], ["卵", "たまご", "tamago", "Egg", "\"Tama-GO\": the egg is ready, GO! 卵 looks like two yolks.", "Ramen topping 味玉 (ajitama), and 卵焼き sweet omelette", null, null], ["辛い", "からい", "karai", "Spicy", "\"KA-RAISE the heat!\"", "Menus mark heat: 辛口 (karakuchi) = hot, 激辛 = extremely hot", null, null], ["甘い", "あまい", "amai", "Sweet", "\"Ah, MY, that's sweet!\"", "甘口 (amakuchi) = mild curry; desserts = 甘味 (kanmi)", null, null], ["美味しい", "おいしい", "oishii", "Delicious", "\"OY, SHE's eating!\" Say it after the first bite. Cooks love it.", "Said at the table; printed on packaging and ads", null, null], ["大盛り", "おおもり", "ōmori", "Large portion", "大 big + 盛り serving: \"Oh, MORE-y!\"", "Ramen and gyūdon shops: 並 regular, 大盛り large, 特盛 extra large", null, null], ["並", "なみ", "nami", "Regular size", "\"NAMI: the normal wave.\" 並 means ordinary, lined up.", "Size buttons on menus and ticket machines", null, null]]},
-{id:'order',name:'At the restaurant',badge:'店',color:'#b0306a',blurb:'Full sentences from door to bill',cards:[["何名様ですか", "なんめいさまですか", "nanmei-sama desu ka", "How many people?", "何 NAN what + 名 MEI person counter: \"Nan-MAY-sama, how many may sit?\"", "The first thing staff ask at the door, often with fingers raised", "何 how many · 名様 people (polite counter) · ですか ?", "何名"], ["二人です", "ふたりです", "futari desu", "Two people", "一人 hitori (1), 二人 futari (2), then 三人 san-nin. \"FOO-TARRY: two tarry together.\"", "Answer to 何名様ですか. Holding up fingers works too", "二人 two people · です is", "二人"], ["メニューをください", "メニューをください", "menyū o kudasai", "The menu, please", "Loanword \"menu\" + を + ください (please give).", "When nobody brings one. Many places have it on the table or use a ticket machine instead", "メニュー menu · を object · ください please give", "メニュー"], ["英語のメニューはありますか", "えいごのメニューはありますか", "eigo no menyū wa arimasu ka", "Do you have an English menu?", "英語 EIGO = English: \"A-GO at English.\" ありますか = is there?", "Tourist areas often have one; QR menus can usually switch language", "英語 English · の 's · メニュー menu · は topic · ありますか is there?", "英語"], ["おすすめは何ですか", "おすすめはなんですか", "osusume wa nan desu ka", "What do you recommend?", "\"Oh, SUE-sue-me\": Sue suggests the dish.", "Ask staff, or look for the おすすめ label on menus and boards", "おすすめ recommendation · は topic · 何 what · ですか ?", "おすすめ"], ["注文お願いします", "ちゅうもんおねがいします", "chūmon onegai shimasu", "I'd like to order", "注文 CHŪMON: \"CHEW-MON, let's chew!\" Start with すみません to get attention.", "Call it after すみません!, or press the call button on the table", "注文 order · お願いします please", "注文"], ["これを二つください", "これをふたつください", "kore o futatsu kudasai", "Two of these, please", "一つ hitotsu, 二つ futatsu, 三つ mittsu: the all-purpose counters. Point while you say it.", "Pointing at menu photos or food models", "これ this · を object · 二つ two (things) · ください please", "二つ"], ["お水をください", "おみずをください", "omizu o kudasai", "Water, please", "お + 水 = polite water. Short and clear.", "When the water jug runs dry", "お水 water · を object · ください please", "お水"], ["肉が食べられません", "にくがたべられません", "niku ga taberaremasen", "I can't eat meat", "食べる TABERU eat → 食べられません cannot eat. Swap 肉 for 卵 (egg) or 魚 (fish).", "Say it before ordering. Dashi broth often contains fish, so mention 魚 too if needed", "肉 meat · が subject · 食べられません cannot eat", "肉"], ["持ち帰りでお願いします", "もちかえりでおねがいします", "mochikaeri de onegai shimasu", "Takeaway, please", "持ち帰り = hold + return: carry it home. Eating in is 店内 (tennai).", "Fast food and bakeries ask 店内ですか? (eating in?)", "持ち帰り takeaway · で as · お願いします please", "持帰"], ["食券", "しょっけん", "shokken", "Meal ticket", "食 eat + 券 ticket. Buy it from the machine, hand it to the cook.", "Ticket machines (券売機) at the entrance of ramen and gyūdon shops", null, "食券"], ["いただきます", "いただきます", "itadakimasu", "(said before eating)", "Literally \"I humbly receive\". Hands together, a small nod, then eat.", "Everyone says it before the first bite", "いただきます I humbly receive", "いただき"], ["ごちそうさまでした", "ごちそうさまでした", "gochisōsama deshita", "Thank you for the meal", "ご馳走 = a feast. Say it to the staff as you leave and watch them beam.", "Leaving a restaurant, or finishing a meal at someone's home", "ごちそうさま thanks for the feast · でした was", "ごちそう"], ["お会計お願いします", "おかいけいおねがいします", "okaikei onegai shimasu", "The bill, please", "お会計 (bill) + お願いします. Or cross your index fingers into an X, the universal sign.", "Usually you pay at the register by the door, not at the table", "お会計 the bill · お願いします please", "お会計"], ["別々でお願いします", "べつべつでおねがいします", "betsubetsu de onegai shimasu", "Separate bills, please", "別 BETSU = separate. 々 repeats the kanji before it: 別々 = each separately.", "Groups paying individually; some places only allow one bill", "別々 separately · で as · お願いします please", "別々"]]}];
+{id:'konbini',name:'At the till',badge:'袋',color:'#2b4c7e',blurb:'Konbini small talk, decoded',cards:[["いらっしゃいませ", "いらっしゃいませ", "irasshaimase", "Welcome! (staff greeting)", "\"Ira-SHY-mase\": staff shout it as you walk in. You don't answer; a small nod is plenty.", "Shouted the moment you enter any shop or restaurant", "いらっしゃい come in (honorific) · ませ polite ending", "いらっしゃい"], ["袋はご利用ですか", "ふくろはごりようですか", "fukuro wa goriyō desu ka", "Do you need a bag?", "袋 FUKURO: \"who could ROll it home without a bag?\" Bags cost a few yen, so they always ask.", "Asked at the till while they scan your items", "袋 bag · は topic · ご利用 use (polite) · ですか ?", "袋"], ["袋はいりません", "ふくろはいりません", "fukuro wa irimasen", "I don't need a bag", "いりません = \"don't need\". IRI-masen: \"eerie, no thanks.\"", "Your answer to 袋はご利用ですか. Shorter and just as polite: 大丈夫です", "袋 bag · は topic · いりません don't need", "不要"], ["温めますか", "あたためますか", "atatamemasu ka", "Shall I heat it up?", "\"A-TA-TA-meh\": hot, hot, hot! They mean the microwave behind the till.", "Asked when you buy a bento, pasta or frozen food", "温め heat up · ます polite · か ?", "温"], ["はい、お願いします", "はい、おねがいします", "hai, onegai shimasu", "Yes, please", "はい (yes) + お願いします (please) = the all-purpose yes to any offer.", "Answer to \"heat it up?\", \"need a bag?\", \"chopsticks?\"", "はい yes · お願いします please", "お願い"], ["大丈夫です", "だいじょうぶです", "daijōbu desu", "No thanks / I'm fine", "\"Dai-JOE-boo\": Joe says he's fine. Literally \"it's OK\", used as a polite no.", "The smoothest way to decline a bag, heating, a receipt or a point card", "大丈夫 all right · です is", "大丈夫"], ["お箸はご利用ですか", "おはしはごりようですか", "ohashi wa goriyō desu ka", "Do you need chopsticks?", "箸 HASHI: \"hush, she brought chopsticks.\" Careful: 橋 (hashi) is a bridge, same sound, different pitch.", "Asked when you buy noodles, bento or salad", "お箸 chopsticks · は topic · ご利用 use · ですか ?", "箸"], ["カードで払えますか", "カードではらえますか", "kādo de haraemasu ka", "Can I pay by card?", "払う HARAU = pay. \"Hara-EMAS-u: harass the card machine.\"", "Most shops take cards and Suica; small ramen shops and temples are often cash only", "カード card · で by means of · 払えます can pay · か ?", "払"], ["現金で", "げんきんで", "genkin de", "In cash", "現金 GENKIN: the \"GENuine KINg\" of money. で = by means of.", "Say it as you hand over notes. On signs, 現金のみ = cash only", "現金 cash · で by / with", "現金"], ["お会計", "おかいけい", "okaikei", "The bill / total", "\"Oh, KAI-KAY\": the total adds up. 会計 = accounts.", "On receipts and in restaurants: お会計お願いします = the bill, please", "お polite · 会計 accounts, total", "会計"], ["ポイントカードはお持ちですか", "ポイントカードはおもちですか", "pointo kādo wa omochi desu ka", "Do you have a point card?", "持つ MOTSU = hold. \"Do you MOCHI (hold) a point card?\" Answer: 大丈夫です.", "Asked at almost every chain-store till", "ポイントカード point card · は topic · お持ち have (polite) · ですか ?", "ポイント"], ["トイレを借りてもいいですか", "トイレをかりてもいいですか", "toire o karite mo ii desu ka", "May I use the toilet?", "借りる KARIRU = borrow. In Japanese you \"borrow\" the toilet, so CARRY it back when you're done.", "Most konbini let customers use the toilet; asking first is polite", "トイレ toilet · を object · 借りても even if I borrow · いいですか is it OK?", "借"], ["レジ袋", "レジぶくろ", "reji-bukuro", "Plastic shopping bag", "レジ (till) + 袋 (bag). ふくろ turns into ぶくろ when joined, a sound change called rendaku.", "Price label at the till: レジ袋 3円", "レジ till · 袋 bag", "レジ袋"]]},
+{id:'menu',name:'Menu words',badge:'麺',color:'#d23b2a',blurb:'Read the menu, dodge surprises',cards:[["水", "みず", "mizu", "Water", "\"MEE-zoo\": water at the zoo. Tap water usually arrives free and unasked.", "Self-service water jugs labelled 水 or お冷 (ohiya)", null, null], ["お茶", "おちゃ", "ocha", "Green tea", "茶 CHA sounds like \"chai\". お is the polite prefix.", "Konbini fridges; free at sushi restaurants (powder and a hot-water tap at each seat)", null, null], ["ビール", "ビール", "bīru", "Beer", "Just \"beer\" with Japanese vowels. Katakana means it's a borrowed word.", "Izakaya menus: 生ビール (nama bīru) = draught beer", null, null], ["寿司", "すし", "sushi", "Sushi", "寿 long life + 司 to rule: auspicious kanji picked for their sound.", "Conveyor-belt shops: 回転寿司 (kaiten-zushi)", null, null], ["弁当", "べんとう", "bentō", "Boxed lunch", "\"BENT-oh\": food bent into a box.", "Konbini shelves; 駅弁 (ekiben) = station bento for the Shinkansen", null, null], ["鶏肉", "とりにく", "toriniku", "Chicken", "鶏 TORI bird + 肉 NIKU meat: \"Tory nicked the chicken.\"", "焼き鳥 (yakitori) = grilled chicken skewers", null, null], ["豚肉", "ぶたにく", "butaniku", "Pork", "豚 BUTA = pig: \"BUTT-a\", pig bottoms.", "豚骨 (tonkotsu) ramen = pork-bone broth", null, null], ["牛肉", "ぎゅうにく", "gyūniku", "Beef", "牛 GYŪ = cow. The kanji looks like a cow's head with horns.", "牛丼 (gyūdon) beef bowls at Yoshinoya, Sukiya and Matsuya", null, null], ["卵", "たまご", "tamago", "Egg", "\"Tama-GO\": the egg is ready, GO! 卵 looks like two yolks.", "Ramen topping 味玉 (ajitama), and 卵焼き sweet omelette", null, null], ["辛い", "からい", "karai", "Spicy", "\"KA-RAISE the heat!\"", "Menus mark heat: 辛口 (karakuchi) = hot, 激辛 = extremely hot", null, null], ["甘い", "あまい", "amai", "Sweet", "\"Ah, MY, that's sweet!\"", "甘口 (amakuchi) = mild curry; desserts = 甘味 (kanmi)", null, null], ["美味しい", "おいしい", "oishii", "Delicious", "\"OY, SHE's eating!\" Say it after the first bite. Cooks love it.", "Said at the table; printed on packaging and ads", null, null], ["大盛り", "おおもり", "ōmori", "Large portion", "大 big + 盛り serving: \"Oh, MORE-y!\"", "Ramen and gyūdon shops: 並 regular, 大盛り large, 特盛 extra large", null, null], ["並", "なみ", "nami", "Regular size", "\"NAMI: the normal wave.\" 並 means ordinary, lined up.", "Size buttons on menus and ticket machines", null, null]]},
+{id:'order',name:'At the restaurant',badge:'店',color:'#1c1c1e',blurb:'Full sentences from door to bill',cards:[["何名様ですか", "なんめいさまですか", "nanmei-sama desu ka", "How many people?", "何 NAN what + 名 MEI person counter: \"Nan-MAY-sama, how many may sit?\"", "The first thing staff ask at the door, often with fingers raised", "何 how many · 名様 people (polite counter) · ですか ?", "何名"], ["二人です", "ふたりです", "futari desu", "Two people", "一人 hitori (1), 二人 futari (2), then 三人 san-nin. \"FOO-TARRY: two tarry together.\"", "Answer to 何名様ですか. Holding up fingers works too", "二人 two people · です is", "二人"], ["メニューをください", "メニューをください", "menyū o kudasai", "The menu, please", "Loanword \"menu\" + を + ください (please give).", "When nobody brings one. Many places have it on the table or use a ticket machine instead", "メニュー menu · を object · ください please give", "メニュー"], ["英語のメニューはありますか", "えいごのメニューはありますか", "eigo no menyū wa arimasu ka", "Do you have an English menu?", "英語 EIGO = English: \"A-GO at English.\" ありますか = is there?", "Tourist areas often have one; QR menus can usually switch language", "英語 English · の 's · メニュー menu · は topic · ありますか is there?", "英語"], ["おすすめは何ですか", "おすすめはなんですか", "osusume wa nan desu ka", "What do you recommend?", "\"Oh, SUE-sue-me\": Sue suggests the dish.", "Ask staff, or look for the おすすめ label on menus and boards", "おすすめ recommendation · は topic · 何 what · ですか ?", "おすすめ"], ["注文お願いします", "ちゅうもんおねがいします", "chūmon onegai shimasu", "I'd like to order", "注文 CHŪMON: \"CHEW-MON, let's chew!\" Start with すみません to get attention.", "Call it after すみません!, or press the call button on the table", "注文 order · お願いします please", "注文"], ["これを二つください", "これをふたつください", "kore o futatsu kudasai", "Two of these, please", "一つ hitotsu, 二つ futatsu, 三つ mittsu: the all-purpose counters. Point while you say it.", "Pointing at menu photos or food models", "これ this · を object · 二つ two (things) · ください please", "二つ"], ["お水をください", "おみずをください", "omizu o kudasai", "Water, please", "お + 水 = polite water. Short and clear.", "When the water jug runs dry", "お水 water · を object · ください please", "お水"], ["肉が食べられません", "にくがたべられません", "niku ga taberaremasen", "I can't eat meat", "食べる TABERU eat → 食べられません cannot eat. Swap 肉 for 卵 (egg) or 魚 (fish).", "Say it before ordering. Dashi broth often contains fish, so mention 魚 too if needed", "肉 meat · が subject · 食べられません cannot eat", "肉"], ["持ち帰りでお願いします", "もちかえりでおねがいします", "mochikaeri de onegai shimasu", "Takeaway, please", "持ち帰り = hold + return: carry it home. Eating in is 店内 (tennai).", "Fast food and bakeries ask 店内ですか? (eating in?)", "持ち帰り takeaway · で as · お願いします please", "持帰"], ["食券", "しょっけん", "shokken", "Meal ticket", "食 eat + 券 ticket. Buy it from the machine, hand it to the cook.", "Ticket machines (券売機) at the entrance of ramen and gyūdon shops", null, "食券"], ["いただきます", "いただきます", "itadakimasu", "(said before eating)", "Literally \"I humbly receive\". Hands together, a small nod, then eat.", "Everyone says it before the first bite", "いただきます I humbly receive", "いただき"], ["ごちそうさまでした", "ごちそうさまでした", "gochisōsama deshita", "Thank you for the meal", "ご馳走 = a feast. Say it to the staff as you leave and watch them beam.", "Leaving a restaurant, or finishing a meal at someone's home", "ごちそうさま thanks for the feast · でした was", "ごちそう"], ["お会計お願いします", "おかいけいおねがいします", "okaikei onegai shimasu", "The bill, please", "お会計 (bill) + お願いします. Or cross your index fingers into an X, the universal sign.", "Usually you pay at the register by the door, not at the table", "お会計 the bill · お願いします please", "お会計"], ["別々でお願いします", "べつべつでおねがいします", "betsubetsu de onegai shimasu", "Separate bills, please", "別 BETSU = separate. 々 repeats the kanji before it: 別々 = each separately.", "Groups paying individually; some places only allow one bill", "別々 separately · で as · お願いします please", "別々"]]}];
 const ALL=[];DECKS.forEach(d=>d.cards.forEach((c,i)=>ALL.push({id:d.id+i,deck:d.id,jp:c[0],kana:c[1],ro:c[2],en:c[3],hook:c[4],where:c[5],bd:c[6]||null,st:c[7]||null})));
-DECKS.push({id:'mix',name:'Mixed review',badge:'混',color:'var(--red)',blurb:'Your weakest cards from every topic'});
+DECKS.push({id:'mix',name:'Mixed review',badge:'混',color:'#7d776d',blurb:'Your weakest cards from every topic'});
 
 const I={
 fire:'<svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2s5 4.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 1-3.5S9 11 10.5 11C10 7 12 2 12 2Z"/></svg>',
@@ -617,23 +801,34 @@ function tone(f,at,dur,type='triangle',vol=.25,f2,vib){if(!P.sfx)return;const a=
   if(vib){const l=a.createOscillator(),lg=a.createGain();l.frequency.value=vib;lg.gain.value=f*.03;l.connect(lg).connect(o.frequency);l.start(t);l.stop(t+dur+.05)}
   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
   o.connect(g).connect(MASTER);o.start(t);o.stop(t+dur+.05)}catch(e){}}
+let NB=null;
+function noise(at,dur,freq,q,vol){if(!P.sfx)return;const a=ac();if(!a)return;try{
+  if(!NB||NB.sampleRate!==a.sampleRate){NB=a.createBuffer(1,Math.floor(a.sampleRate*.5),a.sampleRate);const d=NB.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1}
+  const t=a.currentTime+at,s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();s.buffer=NB;f.type='bandpass';f.frequency.value=freq;f.Q.value=q;
+  g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f).connect(g).connect(MASTER);s.start(t);s.stop(t+dur+.02)}catch(e){}}
 const SFX={
-  right(c=1){const k=1+Math.min(c-1,6)*.059;tone(880*k,0,.13,'triangle',.3);tone(1318*k,.085,.28,'triangle',.3);tone(2637*k,.085,.2,'sine',.05)},
-  wrong(){tone(233,0,.16,'square',.09,196);tone(175,.15,.32,'square',.09,131)},
-  heart(){tone(140,0,.28,'sine',.45,55)},
+  // taiko "don": a body you can hear on small speakers (220 Hz + overtones) plus the stick slap
+  don(v=1,k=1){tone(220*k,0,.32,'sine',.5*v,150*k);tone(440*k,0,.16,'triangle',.28*v,330*k);tone(660*k,0,.08,'sine',.12*v);noise(0,.06,1100,1.1,.6*v)},
+  // wooden "kon": a block knock with a clear mid-range click
+  kon(at=0,f=700,v=1){noise(at,.05,1700,5,1.1*v);tone(f,at,.13,'triangle',.4*v,f*.88);tone(f*2.3,at,.06,'sine',.1*v)},
+  // correct: taiko hit + a two-note koto-style pluck that climbs with the combo
+  right(c=1){const k=1+Math.min(c-1,6)*.05;SFX.don(1,1);tone(784*k,.07,.32,'triangle',.24);tone(1175*k,.15,.42,'triangle',.2);if(c>=3)setTimeout(()=>SFX.don(.7,1.12),130)},
+  // wrong: two wooden knocks and a soft falling tone
+  wrong(){SFX.kon(0,700,.75);SFX.kon(.15,560,.75);tone(392,.08,.34,'sine',.16,294)},
+  heart(){tone(140,0,.28,'sine',.45,55);tone(280,0,.12,'triangle',.15,140)},
   flip(){tone(600,0,.07,'sine',.12,950)},
-  combo(){[1047,1319,1568,2093].forEach((f,i)=>tone(f,i*.06,.18,'sine',.18))},
-  win(){[523,659,784,1047].forEach((f,i)=>tone(f,i*.1,.22,'triangle',.28));[523,659,784,1047].forEach(f=>tone(f,.45,.9,'sine',.1));tone(2093,.45,.6,'sine',.05)},
-  lose(){[[392,.0],[370,.32],[349,.64]].forEach(([f,t])=>tone(f,t,.3,'sawtooth',.07));tone(330,.96,1.1,'sawtooth',.07,262,6);tone(330,.96,1.1,'triangle',.18,262,6)},
+  combo(){[2093,2637,3136,2349,2794].forEach((f,i)=>tone(f*(1+(Math.random()-.5)*.01),i*.075,.7,'sine',.08))},
+  win(){[587,659,784,880,988,1175].forEach((f,i)=>tone(f,i*.085,.55,'triangle',.2));setTimeout(()=>SFX.don(1,1),560)},
+  lose(){[700,620,540].forEach((f,i)=>SFX.kon(i*.16,f,.9));tone(196,.55,.45,'sine',.4,110);SFX.kon(1.15,900)},
 };
 
 /* ---------- visual effects ---------- */
 const RM=(()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}})();
 const fx=document.createElement('canvas');fx.id='fx';document.body.appendChild(fx);
 const fxc=fx.getContext('2d');let parts=[],raf=0;
-const CONF=['#58cc02','#ffc800','#1cb0f6','#ff9600','#ce82ff','#ff4b4b'];
+const CONF=['#d23b2a','#b8892e','#6e8b3d','#f4b6c2','#f4b6c2','#2b4c7e'];
 function spawn(x,y,vx,vy){parts.push({x,y,vx,vy,rot:Math.random()*6,vr:(Math.random()-.5)*.4,w:6+Math.random()*7,h:4+Math.random()*5,
-  c:CONF[Math.random()*CONF.length|0],round:Math.random()<.3,life:1,decay:.006+Math.random()*.006})}
+  c:CONF[Math.random()*CONF.length|0],round:Math.random()<.55,life:1,decay:.006+Math.random()*.006})}
 function burst(x,y,n=36,power=11){if(RM)return;for(let i=0;i<n;i++){const a=-Math.PI/2+(Math.random()-.5)*Math.PI*1.4,v=power*(.45+Math.random()*.7);spawn(x,y,Math.cos(a)*v,Math.sin(a)*v)}run()}
 function rain(n=150){if(RM)return;const W=innerWidth;for(let i=0;i<n;i++)spawn(Math.random()*W,-20-Math.random()*innerHeight*.6,(Math.random()-.5)*3,2+Math.random()*3);run()}
 function run(){if(raf)return;const tick=()=>{const d=devicePixelRatio||1,W=innerWidth,H=innerHeight;
@@ -642,7 +837,7 @@ function run(){if(raf)return;const tick=()=>{const d=devicePixelRatio||1,W=inner
   parts=parts.filter(p=>p.y<H+40&&p.life>0);
   for(const p of parts){p.vy+=.32;p.vx*=.985;p.vy*=.985;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life-=p.decay;
     fxc.save();fxc.globalAlpha=Math.min(1,p.life*2);fxc.translate(p.x,p.y);fxc.rotate(p.rot);fxc.fillStyle=p.c;
-    if(p.round){fxc.beginPath();fxc.arc(0,0,p.w/2.4,0,7);fxc.fill()}else{fxc.scale(1,Math.cos(p.rot*2));fxc.fillRect(-p.w/2,-p.h/2,p.w,p.h)}fxc.restore()}
+    if(p.round){fxc.beginPath();fxc.ellipse(0,0,p.w/1.8,p.w/3.6,0,0,7);fxc.fill()}else{fxc.scale(1,Math.cos(p.rot*2));fxc.fillRect(-p.w/2,-p.h/2,p.w,p.h)}fxc.restore()}
   raf=parts.length?requestAnimationFrame(tick):(fxc.clearRect(0,0,W,H),0)};raf=requestAnimationFrame(tick)}
 function floatText(txt,x,y,cls){const d=document.createElement('div');d.className='float '+cls;d.textContent=txt;d.style.left=x+'px';d.style.top=y+'px';document.body.appendChild(d);setTimeout(()=>d.remove(),1000)}
 function toast(html,cls=''){const d=document.createElement('div');d.className='toast '+cls;d.innerHTML=html;document.body.appendChild(d);setTimeout(()=>d.remove(),1450)}
@@ -652,12 +847,14 @@ function center(el){const r=el?el.getBoundingClientRect():{left:innerWidth/2,top
 const MILESTONES={3:'3 in a row!',5:'5 in a row!',8:'On fire!',10:'Unstoppable!',15:'すごい! 15 streak'};
 function good(el,gain){
   S.combo=(S.combo||0)+1;SFX.right(S.combo);
-  const p=center(el);burst(p.x,p.y,S.combo>=5?55:32,S.combo>=5?13:10);floatText('+'+gain+' XP',p.x,p.top-10,'xp');
+  const p=center(el);burst(p.x,p.y,S.combo>=5?40:22,S.combo>=5?12:9);floatText('+'+gain+' XP',p.x,p.top-10,'xp');
+  floatText('ドン!',p.x+70,p.top-34,'don');if(S.mode==='flash')popMark('hm',el,hmStage(S.combo));
   const m=MILESTONES[S.combo];if(m)setTimeout(()=>{SFX.combo();toast(I.fire+m);burst(innerWidth/2,innerHeight*.25,70,14)},260);
   updCombo();
 }
 function bad(el,lostHeart){
   S.combo=0;SFX.wrong();vignette();jolt(el);updCombo();
+  {const p=center(el);floatText('コン',p.x-70,p.top-20,'kon');if(S.mode==='flash')popMark('dar',el)}
   if(lostHeart){setTimeout(SFX.heart,180);const h=app.querySelector('.hearts');if(h){h.innerHTML=I.heart+S.hearts;jolt(h,'hit');const p=center(h);floatText('−1',p.x,p.top+28,'hurt')}}
 }
 function updCombo(){const c=app.querySelector('#combo');if(c){c.hidden=(S.combo||0)<2;c.innerHTML=I.fire+'×'+(S.combo||0)}}
@@ -671,10 +868,10 @@ function wireSay(root,id){root.querySelectorAll('[data-say]').forEach(b=>b.oncli
 /* ---------- home ---------- */
 /* ---------- packs (themed decks on the hub) ---------- */
 const PACKS=[
- {id:'basics',live:true,badge:'基',color:'var(--green)',shade:'var(--green-d)',level:'N5 · Survival kit',title:'Back to Basics',sub:'Brush up the N5 essentials for getting around town: signs, questions, directions and numbers.',topics:['signs','phrases','directions','numbers']},
- {id:'eats',live:true,topics:['konbini','menu','order'],badge:'食',color:'#ff9600',shade:'#d97f00',level:'N5 · Food',title:'Konbini & Kitchen',sub:'Order, pay and decode menus, from ramen tickets to the convenience-store till.'},
- {id:'stay',badge:'宿',color:'var(--blue)',shade:'var(--blue-d)',level:'N5 · Hotels',title:'Check-in Champion',sub:'Reservations, room keys, Wi-Fi passwords and polite requests at the front desk.'},
- {id:'talk',badge:'話',color:'#ce82ff',shade:'#a568cc',level:'N4 · Conversation',title:'Small Talk Sensei',sub:'Where are you from, what do you do, and how to keep a chat going.'},
+ {id:'basics',live:true,badge:'基',color:'#1c1c1e',shade:'#1c1c1e',level:'N5 · Survival kit',title:'Back to Basics',sub:'Brush up the N5 essentials for getting around town: signs, questions, directions and numbers.',topics:['signs','phrases','directions','numbers']},
+ {id:'eats',live:true,topics:['konbini','menu','order'],badge:'食',color:'#d23b2a',shade:'#d23b2a',level:'N5 · Food',title:'Konbini & Kitchen',sub:'Order, pay and decode menus, from ramen tickets to the convenience-store till.'},
+ {id:'stay',badge:'宿',color:'#2b4c7e',shade:'#2b4c7e',level:'N5 · Hotels',title:'Check-in Champion',sub:'Reservations, room keys, Wi-Fi passwords and polite requests at the front desk.'},
+ {id:'talk',badge:'話',color:'#b8892e',shade:'#b8892e',level:'N4 · Conversation',title:'Small Talk Sensei',sub:'Where are you from, what do you do, and how to keep a chat going.'},
 ];
 const packCards=pk=>ALL.filter(c=>(pk.topics||[]).includes(c.deck));
 function stats(cards){const n=cards.length||1;let m=0,l=0;cards.forEach(c=>{const b=box(c.id);if(b>=3)m++;else if(b>=1)l++});
@@ -688,10 +885,11 @@ let PACK=null;
 function hub(){
   S=null;PACK=null;sheet.innerHTML='';sheet.className='';closeRef();
   const tx=P.days[today()]||0, last=PACKS.find(p=>p.id===P.lastPack&&p.live)||PACKS[0], lst=stats(packCards(last));
-  const h=new Date().getHours(), greet=h<11?['おはよう','Good morning']:h<18?['こんにちは','Good afternoon']:['こんばんは','Good evening'];
+  const h=new Date().getHours(), greet=h<5?['こんばんは','Studying late? 夜更かし (yofukashi) means staying up late.']:h<11?['おはよう','Good morning.']:h<18?['こんにちは','Good afternoon.']:['こんばんは','Good evening.'];
   app.innerHTML=topBar(false)+`
   <section class="hero">
-    <div class="hero-txt"><div class="hero-jp jp">${greet[0]}!</div><div class="hero-en">${greet[1]}. Ready for today's lesson?</div></div>
+    <div class="hero-top"><div class="hero-txt"><div class="hero-jp jp">${greet[0]}!</div><div class="hero-en">${greet[1]} Ready for today's lesson?</div></div>
+      <div class="hero-dar" title="${['Finish a lesson to paint the first eye','One eye painted. Master a topic for the second','Both eyes painted. Wish granted!'][darEyes()]}">${daruma(darEyes(),'')}</div></div>
     <div class="goal"><div class="goal-row">Daily goal <small>${Math.min(tx,GOAL)} / ${GOAL} XP</small></div><div class="bar gold"><i style="width:${Math.min(100,tx/GOAL*100)}%"></i></div></div>
     <button class="btn primary wide" id="continue">${lst.m+lst.l?'Continue':'Start'}: ${last.title}</button>
   </section>
@@ -782,7 +980,7 @@ function flash(c){
 }
 function rateSheet(c){
   sheet.className='sheet';
-  sheet.innerHTML=`<div class="sheet-in"><div class="row2"><button class="btn danger" id="again">Again</button><button class="btn primary" id="good">Got it</button></div></div>`;
+  sheet.innerHTML=`<div class="sheet-in"><div class="row2"><button class="btn danger" id="again">Again</button><button class="btn go" id="good">Got it</button></div></div>`;
   sheet.querySelector('#again').onclick=()=>grade(c,false);
   sheet.querySelector('#good').onclick=()=>grade(c,true);
 }
@@ -826,10 +1024,10 @@ function quiz(c){
     onAnswer(c,ok);
     setTimeout(()=>speak(c.id),ok?420:520);
     sheet.className='sheet anim '+(ok?'good':'bad');
-    sheet.innerHTML=`<div class="sheet-in"><div class="fb"><div class="dot">${ok?I.ok:I.no}</div><div style="flex:1;min-width:0">
-      <h4>${ok?pickOne(['Nice!','Correct!','Great!','やった!']):'Correct answer:'}</h4>
+    sheet.innerHTML=`<div class="sheet-in"><div class="fb"><div class="dot">${ok?hanamaru(hmStage(S.combo)):daruma(0)}</div><div style="flex:1;min-width:0">
+      <h4>${ok?pickOne(['正解! Correct','いいね! Nice','すごい! Great','その通り! Exactly']):'惜しい! So close'}</h4>
       <p>${ok?'':`<span class="jp">${c.jp}</span> · ${c.ro} = ${c.en}<br>`}<span style="opacity:.85">${c.bd?c.bd:c.hook}</span></p></div>${sayBtns()}</div>
-      ${refBtn(c,1)}<button class="btn ${ok?'primary':'danger'} wide" id="cont">Continue</button></div>`;
+      ${refBtn(c,1)}<button class="btn ${ok?'go':'danger'} wide" id="cont">Continue</button></div>`;
     sheet.querySelector('.fb .dot').insertAdjacentHTML('afterend','');
     wireSay(sheet,c.id);const cont=sheet.querySelector('#cont');cont.onclick=render;cont.focus();
   };
@@ -838,6 +1036,7 @@ function quiz(c){
 const pickOne=a=>a[Math.random()*a.length|0];
 
 function finish(){
+  S.ended=true;GHOLD=Date.now()+1700;
   const failed=S.hearts===0, acc=S.tries?Math.round(S.right/S.tries*100):0;
   const xp0=P.xp;
   if(S.xp){P.xp+=S.xp;const t=today();P.days[t]=(P.days[t]||0)+S.xp;
@@ -845,8 +1044,8 @@ function finish(){
   const missed=[...S.missed.values()];
   sheet.className='';sheet.innerHTML='';
   app.innerHTML=`<div class="done ${failed?'fail':''}">
-    ${failed?`<div class="broken">${I.broken}</div>`:''}<div class="jp-big pop">${failed?'残念':'完了'}</div>
-    <h2>${failed?'Out of hearts':'Lesson complete!'}</h2>
+    ${failed?`<div class="dbig">${daruma(darEyes(),'dar roll')}</div><h2 class="jp">七転び八起き</h2><p class="kotowaza">nana korobi ya oki · Fall down seven times, get up eight.<br>Out of hearts, but daruma always gets back up.</p>`
+      :`<div class="yoku">${sakuraStamp()}</div><div class="bouq">${hanamaru(acc===100?4:acc>=80?3:acc>=60?2:1)}</div><h2>Lesson complete</h2>`}
     <div class="tiles">
       <div class="tile y"><b>Total XP</b><span>${I.bolt}${S.xp}</span></div>
       <div class="tile g"><b>Accuracy</b><span>${acc}%</span></div>
@@ -854,9 +1053,9 @@ function finish(){
     ${missed.length?`<div class="miss"><div class="label" style="background:none;padding:0">Tricky ones</div>${missed.map(m=>`<div class="miss-row" role="button" tabindex="0" data-id="${m.id}"><span class="jp">${m.jp}</span><span>${m.en}</span></div>`).join('')}</div>`:''}
     <div class="actions">
       ${missed.length?`<button class="btn blue wide" id="redo">Practice mistakes</button>`:''}
-      <button class="btn primary wide" id="again">Next lesson</button>
+      <button class="btn ${failed?'primary':'go'} wide" id="again">${failed?'Try again':'Next lesson'}</button>
       <button class="btn wide" id="home">Back to deck</button></div></div>`;
-  onLesson(failed,xp0);
+  onLesson(failed,xp0);playPending();
   if(failed)SFX.lose();
   else{SFX.win();burst(innerWidth/2,innerHeight*.3,90,15);setTimeout(()=>rain(170),250);
     if(acc===100&&S.tries>0)setTimeout(()=>{SFX.combo();toast(I.bolt+'Perfect lesson!','gold')},700)}
@@ -889,7 +1088,7 @@ let UID=0;
 
 /* ---- stamp artwork (rubber-stamp style, rough ink edge via SVG filter) ---- */
 document.body.insertAdjacentHTML('beforeend',`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="inkrough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></svg>`);
-const INKS={signs:'#c8102e',phrases:'#1d4e9f',directions:'#1e7b3c',numbers:'#6a3d9a'};
+const INKS={signs:'#c8102e',phrases:'#8f6a20',directions:'#1c1c1e',numbers:'#6a3d9a'};
 const DNAME={signs:'STATION SIGNS',phrases:'QUESTION KIT',directions:'DIRECTIONS',numbers:'NUMBERS'};
 function stampSVG(c){
   const ink=INKS[c.deck],rot=(hashN(c.id)%25)-12,t=(c.st||c.jp).replace(/〜/g,''),n=t.length,u=++UID;
@@ -928,29 +1127,28 @@ function countdown(){if(!P.trip)return null;const d=Math.round((new Date(P.trip+
 
 /* ---- badges: shape per group, ring per rarity, unique glyph per achievement ---- */
 const GROUPS={
- num:{name:'Numbers & Money',jp:'数',c1:'#d39bff',c2:'#9b51e0',shape:'hex'},
- sign:{name:'Station Signs',jp:'駅',c1:'#7fe03a',c2:'#3f9e00',shape:'circle'},
- dir:{name:'Directions',jp:'道',c1:'#ffb547',c2:'#e07800',shape:'shield'},
- phr:{name:'Question Kit',jp:'話',c1:'#5cc8ff',c2:'#1186c4',shape:'bubble'},
- combo:{name:'Combos & Clutch',jp:'技',c1:'#ff7b7b',c2:'#d7263d',shape:'star'},
- daily:{name:'Dedication',jp:'日',c1:'#ffd84d',c2:'#e5a400',shape:'sun'},
- col:{name:'Stamps & Journey',jp:'旅',c1:'#ff8a65',c2:'#c8102e',shape:'oct'},
- misc:{name:'Senses & Secrets',jp:'謎',c1:'#8fa3b0',c2:'#4b5d68',shape:'diamond'},
+ num:{name:'Numbers & Money',jp:'数',c1:'#b8892e',c2:'#b8892e',shape:'hex'},
+ sign:{name:'Station Signs',jp:'駅',c1:'#d23b2a',c2:'#d23b2a',shape:'circle'},
+ dir:{name:'Directions',jp:'道',c1:'#2b4c7e',c2:'#2b4c7e',shape:'shield'},
+ phr:{name:'Question Kit',jp:'話',c1:'#1c1c1e',c2:'#1c1c1e',shape:'bubble'},
+ combo:{name:'Combos & Clutch',jp:'技',c1:'#d23b2a',c2:'#d23b2a',shape:'star'},
+ daily:{name:'Dedication',jp:'日',c1:'#b8892e',c2:'#b8892e',shape:'sun'},
+ col:{name:'Stamps & Journey',jp:'旅',c1:'#c8102e',c2:'#c8102e',shape:'oct'},
+ misc:{name:'Senses & Secrets',jp:'謎',c1:'#4a4743',c2:'#4a4743',shape:'diamond'},
 };
-const TIERS={b:{n:'Common',ring:'#cd8a4b'},s:{n:'Rare',ring:'#b9c4cf'},g:{n:'Epic',ring:'#ffc800'},p:{n:'Legendary',ring:'#6fe3ff'}};
+const TIERS={b:{n:'Common',ring:'#b98a5e'},s:{n:'Rare',ring:'#a9b0b6'},g:{n:'Epic',ring:'#b8892e'},p:{n:'Legendary',ring:'#e8d9a8'}};
 const poly=(n,r,r2,rot=0)=>{let p=[];for(let i=0;i<n*(r2?2:1);i++){const a=rot+i*Math.PI*2/(n*(r2?2:1)),rr=r2&&i%2?r2:r;p.push((50+rr*Math.sin(a)).toFixed(1)+','+(50-rr*Math.cos(a)).toFixed(1))}return `<polygon points="${p.join(' ')}" ATTR/>`};
 const SHAPES={
  circle:`<circle cx="50" cy="50" r="44" ATTR/>`,hex:poly(6,46),oct:poly(8,46,0,Math.PI/8),diamond:poly(4,47),
  star:poly(10,47,37),sun:poly(14,47,41),
  shield:`<path d="M50 4 90 16V50C90 74 71 90 50 97 29 90 10 74 10 50V16Z" ATTR/>`,
  bubble:`<path d="M26 8H74a18 18 0 0 1 18 18v36a18 18 0 0 1-18 18H54L34 96l4-16H26A18 18 0 0 1 8 62V26A18 18 0 0 1 26 8Z" ATTR/>`};
-function badgeSVG(a,on){const g=GROUPS[a.g],t=TIERS[a.t],u=++UID,secret=a.secret&&!on,gl=secret?'?':a.glyph,n=[...gl].length;
-  const fs=n<=1?44:n<=2?34:n<=3?26:21,shape=SHAPES[g.shape];
-  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" font-family="${JPF}" aria-hidden="true"><defs><linearGradient id="bg${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${secret?'#9aa3aa':g.c1}"/><stop offset="1" stop-color="${secret?'#5f676e':g.c2}"/></linearGradient></defs>
-   ${shape.replace('ATTR',`fill="url(#bg${u})" stroke="${t.ring}" stroke-width="5" stroke-linejoin="round"`)}
-   ${shape.replace('ATTR','fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" transform="translate(50 50) scale(.84) translate(-50 -50)"')}
-   <ellipse cx="50" cy="30" rx="26" ry="10" fill="#fff" opacity=".18"/>
-   <text x="50" y="${52+fs*.36}" font-size="${fs}" font-weight="900" fill="#fff" text-anchor="middle" stroke="rgba(0,0,0,.28)" stroke-width="3" paint-order="stroke">${gl}</text></svg>`}
+function badgeSVG(a,on){const g=GROUPS[a.g],t=TIERS[a.t],secret=a.secret&&!on,gl=secret?'?':a.glyph,n=[...gl].length;
+  const fs=n<=1?46:n<=2?34:n<=3?26:21,fill=secret?'#8c867c':g.c2;
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" font-family="${JPF}" aria-hidden="true">
+   <rect x="5" y="5" width="90" height="90" rx="9" fill="${fill}" stroke="${t.ring}" stroke-width="5"/>
+   <rect x="15" y="15" width="70" height="70" rx="4" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+   <text x="50" y="${52+fs*.36}" font-size="${fs}" font-weight="900" fill="#fff" text-anchor="middle">${gl}</text></svg>`}
 
 /* ---- achievement definitions ---- */
 const has=id=>!!P.stamps[id], all=ids=>ids.every(has), cntSt=ids=>ids.filter(has).length;
@@ -1056,8 +1254,8 @@ function hubExtras(){const j=jstate(),cd=countdown(),sN=Object.keys(P.stamps).le
   return `<div class="tiles3">
    <button class="tile3" data-go="stamps"><span class="t3i jp" style="background:#c8102e">印</span><b>${sN}<small>/${ALL.length}</small></b><span>Stamps</span></button>
    <button class="tile3" data-go="journey"><span class="t3i jp" style="background:var(--blue)">旅</span><b>${j.km}<small> km</small></b><span>Journey</span></button>
-   <button class="tile3" data-go="ach"><span class="t3i" style="background:var(--gold)">${I.trophy}</span><b>${aN}<small>/${ACH.length}</small></b><span>Achievements</span></button>
-   <button class="tile3" data-go="kana"><span class="t3i jp" style="background:#ff4b4b">あ</span><b class="jp">かな</b><span>Kana chart</span></button></div>
+   <button class="tile3" data-go="ach"><span class="t3i jp" style="background:#c8102e">守</span><b>${aN}<small>/${ACH.length}</small></b><span>Charms</span></button>
+   <button class="tile3" data-go="kana"><span class="t3i jp" style="background:#1c1c1e">あ</span><b class="jp">かな</b><span>Kana chart</span></button></div>
   <button class="jmini" data-go="journey">
    <div class="jm-top"><span class="kicker">Shinkansen journey</span><span class="cd ${cd?'':'unset'}">${cd?cd.t:'Set departure date'}</span></div>
    <div class="jm-track"><i style="width:${j.pct}%"></i>${STOPS.map(s=>`<u class="${jkm()>=s.km?'on':''}" style="left:${s.km/LINE_KM*100}%"></u>`).join('')}<span class="jm-train" style="left:${j.pct}%">${I.train}</span></div>
@@ -1122,10 +1320,10 @@ const KROWS=[
 const DROWS=[['g','がぎぐげご','ga gi gu ge go'],['z','ざじずぜぞ','za ji zu ze zo'],['d','だぢづでど','da ji zu de do'],['b','ばびぶべぼ','ba bi bu be bo'],['p','ぱぴぷぺぽ','pa pi pu pe po']];
 const YROWS=[['き','ky'],['し','sh'],['ち','ch'],['に','ny'],['ひ','hy'],['み','my'],['り','ry'],['ぎ','gy'],['じ','j'],['び','by'],['ぴ','py']];
 const KINFO={
- hira:{label:'Hiragana',jp:'ひらがな',badge:'あ',color:'#ff4b4b',
+ hira:{label:'Hiragana',jp:'ひらがな',badge:'あ',color:'#d23b2a',
   sub:'The rounded script for native words and grammar endings. The す in すみません, the ください in これをください and the を in 切符を are all hiragana.',
   tip:'Hiragana grew out of fast, cursive brush writing, which is why the strokes curve.'},
- kata:{label:'Katakana',jp:'カタカナ',badge:'ア',color:'#1cb0f6',
+ kata:{label:'Katakana',jp:'カタカナ',badge:'ア',color:'#2b4c7e',
   sub:'The angular script for loanwords and foreign names: トイレ (toilet), コンビニ (convenience store), ホテル (hotel), and the line names on transfer signs.',
   tip:'Katakana came from pieces of kanji, which is why the strokes are short and straight. Sound out a word and it is often English in disguise.'}};
 let KMODE='hira',KHIDE=false;
@@ -1156,7 +1354,7 @@ function kanaView(mode){if(mode)KMODE=mode;S=null;sheet.innerHTML='';sheet.class
 ACH.splice(ACH.findIndex(a=>a.id==='mall'),0,{id:'mkana',g:'misc',t:'b',name:'Kana-do Attitude',desc:'Tap 50 characters in the kana charts.',glyph:'あ',test:()=>(P.cnt.kana||0)>=50,prog:()=>[Math.min(P.cnt.kana||0,50),50]});
 
 /* ================= KONBINI & KITCHEN extras ================= */
-Object.assign(INKS,{konbini:'#1e9e63',menu:'#d9661a',order:'#b0306a'});
+Object.assign(INKS,{konbini:'#2b4c7e',menu:'#d9661a',order:'#b0306a'});
 Object.assign(DNAME,{konbini:'KONBINI',menu:'MENU',order:'RESTAURANT'});
 const idOf=jp=>(ALL.find(c=>c.jp===jp)||{}).id;
 const hasJ=(...jps)=>jps.every(j=>has(idOf(j)));
@@ -1183,7 +1381,7 @@ Object.assign(REF,{
 });
 
 /* achievements */
-{const m=GROUPS.misc;delete GROUPS.misc;GROUPS.food={name:'Konbini & Kitchen',jp:'食',c1:'#5fd39a',c2:'#1e9e63',shape:'square'};GROUPS.misc=m;}
+{const m=GROUPS.misc;delete GROUPS.misc;GROUPS.food={name:'Konbini & Kitchen',jp:'食',c1:'#2b4c7e',c2:'#2b4c7e',shape:'square'};GROUPS.misc=m;}
 SHAPES.square=`<rect x="6" y="6" width="88" height="88" rx="24" ATTR/>`;
 ACH.splice(ACH.findIndex(a=>a.g==='misc'),0,
  {id:'fbag',g:'food',t:'b',name:'Bag? No Thanks',desc:'Master 袋はいりません. Save the planet and 3 yen.',glyph:'袋',test:()=>hasJ('袋はいりません')},
@@ -1206,6 +1404,220 @@ const kanaBtn=()=>`<button class="kana-btn" data-kana aria-pressed="false">${I.e
 function toggleKana(btn){const on=btn.getAttribute('aria-pressed')!=='true';btn.setAttribute('aria-pressed',on);btn.querySelector('span').textContent=on?'Hide kana':'Show kana';
   app.querySelectorAll('.kana-reveal').forEach(el=>el.hidden=!on);if(on){P.cnt.peek=(P.cnt.peek||0)+1;save();checkAch()}}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-kana]');if(b){e.stopPropagation();toggleKana(b)}},true);
+
+/* ================= 墨と朱 art: hanamaru · daruma · sakura stamp ================= */
+function hmFlower(s=1,cls=''){let sp='';const N=150;for(let i=0;i<=N;i++){const t=i/N*Math.PI*2*2.6,r=2.5+t*1.75;sp+=(i?'L':'M')+(r*Math.cos(t-1.2)).toFixed(1)+' '+(r*Math.sin(t-1.2)).toFixed(1)}
+  let pe='';const P=8,R=34;for(let i=0;i<P;i++){const a=i/P*Math.PI*2-1.4,b=(i+1)/P*Math.PI*2-1.4,st=b-a,f=v=>v.toFixed(1);
+   const x0=R*Math.cos(a),y0=R*Math.sin(a),x1=R*Math.cos(b),y1=R*Math.sin(b);
+   pe+=(i?'':'M'+f(x0)+' '+f(y0))+`C${f(R*1.62*Math.cos(a+st*.05))} ${f(R*1.62*Math.sin(a+st*.05))} ${f(R*1.62*Math.cos(b-st*.05))} ${f(R*1.62*Math.sin(b-st*.05))} ${f(x1)} ${f(y1)}`}
+  return `<g transform="scale(${s})"><path pathLength="1" class="${cls}" d="${sp}" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path pathLength="1" class="d2 ${cls}" d="${pe}" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></g>`}
+const hmLeaf=(x,y,r)=>`<path pathLength="1" class="d4" d="M0 0C10 -12 28 -12 36 0C28 10 10 10 0 0Z" transform="translate(${x} ${y}) rotate(${r})" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round"/>`;
+const hmStage=c=>c>=10?4:c>=5?3:c>=3?2:1;
+function hanamaru(stage=1){
+  if(stage>=4)return `<span class="hm"><svg viewBox="-120 -110 240 250" aria-label="Hanamaru bouquet">
+    <path pathLength="1" class="d3" d="M-52 -18C-40 40 -14 70 0 104M52 -18C40 40 14 70 0 104M0 -56V104" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>
+    ${hmLeaf(-4,40,-140)}${hmLeaf(4,58,-40)}<g transform="translate(-58 -24)">${hmFlower(.62)}</g><g transform="translate(58 -24)">${hmFlower(.62)}</g><g transform="translate(0 -62)">${hmFlower(.72)}</g>
+    <path class="rib" d="M-16 92Q0 82 16 92L22 118 6 108 0 122 -6 108 -22 118Z" fill="#d23b2a"/></svg></span>`;
+  const tall=stage>=2;
+  return `<span class="hm"><svg viewBox="-70 -70 140 ${tall?210:140}" aria-label="Hanamaru">${hmFlower()}`+
+    (tall?`<path pathLength="1" class="d3" d="M2 58C8 90 -6 112 2 136" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round"/>`:'')+
+    (stage>=3?hmLeaf(4,96,-25)+hmLeaf(0,112,-155):'')+`</svg></span>`}
+function daruma(eyes=0,cls='dar'){const INK='#1c1c1e',W='#f3efe6',G='#b8892e',SH='#d23b2a';
+  const eye=(x,p)=>`<circle cx="${x}" cy="-14" r="10" fill="#fff"/>`+(p?`<circle cx="${x}" cy="-14" r="7.5" fill="${INK}"/><circle cx="${x+2.5}" cy="-17" r="2" fill="#fff"/>`:'');
+  return `<span class="${cls}"><svg viewBox="-64 -70 128 142" aria-label="Daruma${eyes?` with ${eyes} eye${eyes>1?'s':''} painted`:''}">
+   <path d="M0 -62C38 -62 56 -26 56 12C56 48 32 66 0 66C-32 66 -56 48 -56 12C-56 -26 -38 -62 0 -62Z" fill="${INK}" stroke="#4a4743" stroke-width="1.5"/>
+   <path d="M0 -42C26 -42 38 -26 38 -8C38 14 20 24 0 24C-20 24 -38 14 -38 -8C-38 -26 -26 -42 0 -42Z" fill="${W}"/>
+   <path d="M-30 -30C-24 -40 -10 -40 -4 -31M30 -30C24 -40 10 -40 4 -31" fill="none" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/>
+   ${eye(-14,eyes>=1)}${eye(14,eyes>=2)}
+   <path d="M-3 0Q0 4 3 0" fill="none" stroke="${INK}" stroke-width="2.4" stroke-linecap="round"/>
+   <path d="M-26 6C-18 14 -8 10 0 6C8 10 18 14 26 6M-20 14C-12 24 12 24 20 14" fill="none" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>
+   <path d="M-8 -26Q0 -22 8 -26" fill="none" stroke="${G}" stroke-width="2" stroke-linecap="round"/>
+   <path d="M-46 -6Q-50 30 -30 52M46 -6Q50 30 30 52" fill="none" stroke="${G}" stroke-width="3" stroke-linecap="round"/>
+   <circle cx="0" cy="44" r="13" fill="${SH}"/><text x="0" y="50" font-family="${JPF}" font-weight="900" font-size="16" fill="#fff" text-anchor="middle">福</text></svg></span>`}
+function sakuraStamp(){let p='';for(let i=0;i<5;i++)p+=`<g transform="rotate(${i*72})"><path d="M0 -8C-30 -30 -34 -78 -10 -92L0 -84 10 -92C34 -78 30 -30 0 -8Z" fill="#d23b2a"/></g>`;
+  return `<svg viewBox="-100 -100 200 200" aria-label="よくできました, well done"><g transform="rotate(-10)" opacity=".94">${p}<circle r="40" fill="#d23b2a"/><circle r="34" fill="none" stroke="#fff" stroke-width="1.6" opacity=".7"/>
+   <text y="-4" font-family="${JPF}" font-weight="900" font-size="20" fill="#fff" text-anchor="middle">よく</text><text y="20" font-family="${JPF}" font-weight="900" font-size="15" fill="#fff" text-anchor="middle">できました</text></g></svg>`}
+function popMark(kind,el,stage){const p=center(el),d=document.createElement('div');d.className='markpop';
+  d.innerHTML=kind==='hm'?hanamaru(stage):daruma(0);d.style.left=p.x+'px';d.style.top=p.y+'px';
+  d.firstElementChild.style.width=kind==='hm'&&stage>=2?'110px':'96px';document.body.appendChild(d);setTimeout(()=>d.remove(),1100)}
+const darEyes=()=>(P.ach&&P.ach.deye1?1:0)+(P.ach&&P.ach.deye2?1:0);
+
+/* daruma-eye achievements: paint one eye when you start, the other when you reach the goal */
+ACH.splice(ACH.findIndex(a=>a.id==='dfirst')+1,0,
+ {id:'deye1',g:'daily',t:'b',name:'One Eye Open',desc:'Finish your first lesson and paint the daruma\'s left eye. Make a wish!',glyph:'目',test:()=>C('lessons')>=1});
+ACH.splice(ACH.findIndex(a=>a.id==='stpage')+1,0,
+ {id:'deye2',g:'col',t:'g',name:'Wish Granted',desc:'Master every card in one topic to paint the daruma\'s right eye.',glyph:'願',test:()=>liveTopics().some(d=>cardsOf(d).every(c=>has(c.id)))});
+checkAch(true);
+
+/* ================= お守り charms · collector's book · ガチャ reveal ================= */
+const OK_='#1c1c1e',OS='#d23b2a',OG='#b8892e',OM='#6e8b3d',OA='#2b4c7e',OW='#fff',OY='#f1d27a';
+const sw=(w=2)=>`stroke="${OK_}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"`;
+const tx=(x,y,t,s=10,f=OK_)=>`<text x="${x}" y="${y}" font-size="${s}" font-weight="900" fill="${f}" text-anchor="middle" font-family="${JPF}">${t}</text>`;
+const daruIcon=(eyes=2,rot=0)=>`<g transform="rotate(${rot})"><path d="M0 -22C14 -22 20 -9 20 4C20 17 12 23 0 23C-12 23 -20 17 -20 4C-20 -9 -14 -22 0 -22Z" fill="${OS}" ${sw()}/><path d="M0 -15C9 -15 14 -9 14 -3C14 4 7 8 0 8C-7 8 -14 4 -14 -3C-14 -9 -9 -15 0 -15Z" fill="${OW}"/>
+ <circle cx="-5.5" cy="-5" r="3.8" fill="${OW}" ${sw(1.4)}/><circle cx="5.5" cy="-5" r="3.8" fill="${OW}" ${sw(1.4)}/>${eyes>=1?`<circle cx="-5.5" cy="-5" r="2.6" fill="${OK_}"/>`:''}${eyes>=2?`<circle cx="5.5" cy="-5" r="2.6" fill="${OK_}"/>`:''}
+ <path d="M-8 2C-5 5 -2 4 0 2C2 4 5 5 8 2" fill="none" ${sw(1.5)}/><path d="M-11 -11Q-7 -14 -3 -11M11 -11Q7 -14 3 -11" fill="none" ${sw(1.8)}/><path d="M-15 4Q-16 13 -9 18M15 4Q16 13 9 18" stroke="${OY}" stroke-width="1.8" fill="none"/></g>`;
+const flame=(x=0,y=0,s=1)=>`<path transform="translate(${x} ${y}) scale(${s})" d="M0 -20C10 -8 14 0 12 8C10 16 4 20 0 20C-4 20 -12 16 -12 6C-12 -2 -6 -4 -6 -12C-2 -8 0 -6 0 -20Z" fill="${OS}" ${sw(1.8)}/><path transform="translate(${x} ${y}) scale(${s})" d="M0 0C4 4 6 8 4 12C2 16 -4 16 -5 11C-6 6 -2 6 0 0Z" fill="${OY}"/>`;
+const heart=(f=OS)=>`<path d="M0 18C-14 9 -22 1 -22 -8A10 10 0 0 1 0 -14A10 10 0 0 1 22 -8C22 1 14 9 0 18Z" fill="${f}" ${sw()}/>`;
+const cal=(t)=>`<rect x="-19" y="-16" width="38" height="36" rx="4" fill="${OW}" ${sw()}/><rect x="-19" y="-16" width="38" height="10" rx="4" fill="${OS}" ${sw()}/><path d="M-10 -21V-12M10 -21V-12" ${sw(2.5)}/>${tx(0,15,t,16)}`;
+const ICONS={
+ blocks:`<rect x="-24" y="2" width="15" height="15" rx="2" fill="${OY}" ${sw()}/>${tx(-16.5,14,'1',11)}<rect x="-7.5" y="2" width="15" height="15" rx="2" fill="#9fd0e6" ${sw()}/>${tx(0,14,'2',11)}<rect x="9" y="2" width="15" height="15" rx="2" fill="#f4b6c2" ${sw()}/>${tx(16.5,14,'3',11)}<path d="M-6 -22h20a5 5 0 0 1 5 5v6a5 5 0 0 1-5 5h-8l-6 5v-5h-6a5 5 0 0 1-5-5v-6a5 5 0 0 1 5-5Z" fill="${OW}" ${sw(1.6)}/>${tx(4,-10,'6,7?',8.5,OS)}`,
+ sheep:`<path d="M-24 18H24M-18 8V22M0 8V22M18 8V22M-24 10H24" stroke="#8a6416" stroke-width="2.5" stroke-linecap="round"/><g transform="translate(0 -10) rotate(-12)"><path d="M-14 0a6 6 0 0 1 6-8a7 7 0 0 1 12-2a7 7 0 0 1 11 5a6 6 0 0 1-1 11h-23a6 6 0 0 1-5-6Z" fill="${OW}" ${sw()}/><ellipse cx="17" cy="-1" rx="5" ry="4" fill="${OK_}"/><path d="M-8 6l-4 8M8 6l4 8" ${sw(2.5)}/></g>${tx(-20,-16,'z',9)}${tx(-14,-22,'z',7)}`,
+ elevator:`<rect x="-14" y="-24" width="28" height="48" rx="4" fill="#d9dde1" ${sw()}/>${['5','4','3'].map((n,i)=>`<circle cx="0" cy="${-12+i*13}" r="5.5" fill="${n==='4'?'#9aa1a6':OW}" ${sw(1.4)}/>${n==='4'?`<path d="M-6 ${-6+i*13}L6 ${-18+i*13}" stroke="${OS}" stroke-width="2.4" stroke-linecap="round"/>`:tx(0,-8.5+i*13,n,8)}`).join('')}`,
+ fan:`<path d="M0 18L-24 -8A34 34 0 0 1 24 -8Z" fill="${OS}" ${sw()}/>${[-18,-9,0,9,18].map(x=>`<path d="M0 18L${x} -13" stroke="${OY}" stroke-width="1.4"/>`).join('')}<circle cx="0" cy="18" r="3" fill="${OY}" ${sw(1.4)}/>${tx(0,0,'八',13,OW)}`,
+ abacus:`<rect x="-24" y="-18" width="48" height="36" rx="3" fill="none" stroke="#8a6416" stroke-width="3"/><path d="M-24 -6H24" stroke="#8a6416" stroke-width="2.5"/>${[-16,-6,4,14].map((x,i)=>`<path d="M${x} -18V18" stroke="#8a6416" stroke-width="1.2"/><ellipse cx="${x}" cy="-12" rx="4.5" ry="3" fill="${OS}" ${sw(1.2)}/>${[0,1,2].map(j=>`<ellipse cx="${x}" cy="${(i%2?2:6)+j*5}" rx="4.5" ry="2.6" fill="${OY}" ${sw(1.2)}/>`).join('')}`).join('')}`,
+ coin:`<ellipse cx="0" cy="0" rx="16" ry="23" fill="${OY}" ${sw()}/><ellipse cx="0" cy="0" rx="11" ry="17" fill="none" stroke="#a87a22" stroke-width="1.5"/>${tx(0,6,'¥',18,'#8a6416')}<path d="M18 -16l3-3M21 -8h4M18 -22l1-4" stroke="${OG}" stroke-width="2" stroke-linecap="round"/>`,
+ clock:`<circle r="22" fill="${OW}" ${sw()}/>${[0,1,2,3,4,5,6,7,8,9,10,11].map(i=>`<path d="M0 -19V-16" transform="rotate(${i*30})" ${sw(i%3?1.2:2)}/>`).join('')}<path d="M0 0V-12M0 0L9 5" ${sw(2.8)}/><circle r="2.5" fill="${OS}"/>`,
+ exit:`<rect x="6" y="-20" width="14" height="36" fill="none" ${sw(3.5)}/><circle cx="-8" cy="-15" r="4.5" fill="#2e9b4b"/><path d="M-8 -8-11 4M-11 4-16 15M-11 4l7 10M-9 -5-16 -1M-8 -6l8-2" stroke="#2e9b4b" stroke-width="4" stroke-linecap="round" fill="none"/>`,
+ compass:`<circle r="23" fill="${OW}" ${sw(2.5)}/><path d="M0 -21V-15M0 21V15M-21 0H-15M21 0H15" ${sw()}/>${tx(0,-9,'N',7,OS)}<rect x="-8" y="-8" width="16" height="16" rx="3" fill="#e9b85a" stroke="#a87a22" stroke-width="1.5"/><path d="M-8 -3H8M-8 3H8M-3 -8V8M3 -8V8" stroke="#a87a22" stroke-width="1.3"/><path d="M0 -18l4 9h-8Z" fill="${OS}"/>`,
+ gate:`<rect x="-24" y="-6" width="10" height="24" rx="2" fill="#cfd6dc" ${sw()}/><rect x="14" y="-6" width="10" height="24" rx="2" fill="#cfd6dc" ${sw()}/><rect x="-22" y="-6" width="6" height="4" fill="#2a7de1"/><path d="M-14 4H-4M14 4H4" stroke="#f39800" stroke-width="4"/><circle cx="0" cy="-16" r="5" fill="${OK_}"/><path d="M0 -10V6M0 6-5 18M0 6l5 12M-6 -4h12" ${sw(3.5)}/>`,
+ track:`<rect x="-22" y="-24" width="20" height="16" rx="3" fill="#1f2d4d"/>${tx(-12,-12,'3',12,OW)}<path d="M2 20V-6C2 -14 8 -18 14 -18H18C24 -18 26 -12 26 -6V20Z" fill="${OW}" ${sw()}/><rect x="6" y="-12" width="16" height="9" rx="2" fill="#9fd0e6" ${sw(1.4)}/><path d="M2 8H26" stroke="${OA}" stroke-width="3"/><path d="M-24 22H26" ${sw(2.5)}/>`,
+ transfer:`<path d="M-22 -8H14M14 -8l-7-7M14 -8l-7 7" stroke="${OS}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M22 10H-14M-14 10l7-7M-14 10l7 7" stroke="${OA}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+ toilet:`<circle cx="-11" cy="-14" r="5" fill="${OK_}"/><path d="M-17 -6h12v14h-3v12h-6V8h-3Z" fill="${OK_}"/><circle cx="11" cy="-14" r="5" fill="${OS}"/><path d="M11 -7l8 15h-4v12h-8V8H3Z" fill="${OS}"/><path d="M22 -22c3 4 3 7 0 8-3-1-3-4 0-8Z" fill="#5cb8e6"/>`,
+ cap:`<path d="M-22 -2C-22 -20 22 -20 22 -2Z" fill="#1f2d4d" ${sw()}/><rect x="-22" y="-4" width="44" height="8" fill="#16213a"/><path d="M-22 4C-10 14 14 14 24 6L22 2C10 8 -10 8 -22 2Z" fill="${OK_}"/><path d="M-20 -4H20" stroke="${OY}" stroke-width="2"/><circle cx="0" cy="-11" r="5.5" fill="${OY}" stroke="#a87a22" stroke-width="1.5"/>`,
+ lr:`<path d="M-4 -12H-22M-22 -12l7-7M-22 -12l7 7" stroke="${OA}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M4 12H22M22 12l-7-7M22 12l-7 7" stroke="${OS}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>${tx(-4,8,'?',16)}${tx(10,-6,'?',12,OG)}`,
+ road:`<path d="M-8 24L-3 -24H3L8 24Z" fill="#5e6469"/><path d="M0 18V12M0 4V-2M0 -10V-16" stroke="${OW}" stroke-width="2"/><path d="M-24 24L-8 24M8 24L24 24" ${sw()}/><path d="M12 -8V-22M12 -22l-5 6M12 -22l5 6" stroke="${OM}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`,
+ signal:`<path d="M-3 24V4" stroke="#7a7f84" stroke-width="4"/><rect x="-24" y="-18" width="48" height="20" rx="6" fill="#3b4045" ${sw()}/><circle cx="-13" cy="-8" r="6" fill="#19c2a6"/><circle cx="0" cy="-8" r="6" fill="#5a5f63"/><circle cx="13" cy="-8" r="6" fill="#5a5f63"/><path d="M-13 -20v-4M-21 -16l-3-3M-5 -16l3-3" stroke="#19c2a6" stroke-width="2" stroke-linecap="round"/>`,
+ pin:`<path d="M-24 -14L-8 -20L8 -14L24 -20V18L8 24L-8 18L-24 24Z" fill="#e9eedf" ${sw(1.6)}/><path d="M-8 -20V18M8 -14V24" stroke="#c9cfbd" stroke-width="1.5"/><path d="M4 8C-4 -2 -6 -6 -6 -10A10 10 0 0 1 14 -10C14 -6 12 -2 4 8Z" fill="${OS}" ${sw(1.6)}/><circle cx="4" cy="-10" r="3.5" fill="${OW}"/>`,
+ bow:`<circle cx="10" cy="-12" r="6" fill="${OK_}"/><path d="M-16 20L-8 0L6 -4" ${sw(5)} fill="none"/><path d="M-8 0L-14 -6" ${sw(4)}/><path d="M-22 22H22" ${sw(2)}/><path d="M18 -20q4 2 6 6M20 -24q5 3 7 9" stroke="${OS}" stroke-width="1.8" fill="none" stroke-linecap="round"/>`,
+ again:`<path d="M-22 -18h30a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6h-14l-10 8v-8h-6a6 6 0 0 1-6-6v-12a6 6 0 0 1 6-6Z" fill="${OW}" ${sw()}/>${tx(-6,0,'?!',16,OS)}<path d="M14 6a10 10 0 1 1 6 14" fill="none" stroke="${OA}" stroke-width="3" stroke-linecap="round"/><path d="M20 20l-6 2 2-6" fill="none" stroke="${OA}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`,
+ gator:`<path d="M-24 4C-24 -6 -14 -12 0 -12H18C24 -12 26 -4 22 0L0 2L22 6C24 12 20 14 14 14H0C-14 14 -24 12 -24 4Z" fill="${OM}" ${sw()}/><circle cx="-6" cy="-16" r="4.5" fill="${OM}" ${sw(1.6)}/><circle cx="-5" cy="-16" r="2" fill="${OK_}"/><path d="M4 2l2 3 2-3 2 3 2-3 2 3" stroke="${OW}" stroke-width="1.4" fill="none"/><path d="M-12 18l-6 -4v8ZM-12 18l6 -4v8Z" fill="${OS}" ${sw(1.4)}/><circle cx="-12" cy="18" r="2" fill="${OS}" ${sw(1.2)}/>`,
+ finger:`<path d="M-20 4H4C8 4 8 -2 4 -2H-4C0 -2 0 -8 -4 -8H-12L-20 -2Z" fill="#f5d3b3" ${sw(1.8)}/><path d="M-4 -2H18C22 -2 22 4 18 4" fill="#f5d3b3" ${sw(1.8)}/><path d="M-20 4C-20 14 -14 18 -6 18H2C6 18 6 12 2 12H-2" fill="#f5d3b3" ${sw(1.8)}/><circle cx="24" cy="-14" r="6" fill="${OY}" ${sw(1.4)}/>${tx(24,-11,'!',8)}`,
+ bubbles:`<path d="M-24 -20h22a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5h-10l-8 6v-6h-4a5 5 0 0 1-5-5v-10a5 5 0 0 1 5-5Z" fill="${OW}" ${sw(1.8)}/>${tx(-12,-8,'あ',10)}<path d="M2 -2h18a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5h-4v6l-8-6h-6a5 5 0 0 1-5-5v-10a5 5 0 0 1 5-5Z" fill="${OS}" ${sw(1.8)}/>${tx(11,10,'Hi',9,OW)}`,
+ flame1:flame(0,0,1),
+ flame2:flame(-9,4,.85)+flame(10,-2,1),
+ bullet:`<path d="M-26 14C-26 -2 -10 -14 14 -14H22C26 -14 26 14 22 14Z" fill="${OW}" ${sw()}/><path d="M-6 -8C2 -10 10 -10 16 -10V-2H-12C-10 -4 -8 -6 -6 -8Z" fill="#2b2f33"/><path d="M-26 8H24" stroke="${OA}" stroke-width="3"/><path d="M14 -22H26M16 22H26M20 0H28" stroke="${OS}" stroke-width="2.5" stroke-linecap="round"/>`,
+ shine:heart()+`<path d="M14 -18l2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="${OY}" ${sw(1.2)}/><path d="M-6 -6C-4 -10 0 -10 2 -8" stroke="${OW}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`,
+ clutch:heart()+`<path d="M-4 -12L2 -2L-4 4L2 12" stroke="${OW}" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 -16c3 4 3 7 0 8-3-1-3-4 0-8Z" fill="#5cb8e6"/>`,
+ fallen:daruIcon(0,-80)+`<path d="M18 12q6-6 4-14M24 14q8-8 5-18" stroke="${OK_}" stroke-width="1.6" fill="none" opacity=".5"/>`,
+ bolt:`<path d="M6 -24L-14 4H0L-6 24L14 -4H0Z" fill="${OY}" ${sw()}/>`,
+ wave:`<path d="M-10 18V-8C-10 -12 -4 -12 -4 -8V-2V-16C-4 -20 2 -20 2 -16V-2V-14C2 -18 8 -18 8 -14V0V-8C8 -12 14 -12 14 -8V8C14 16 8 22 0 22C-6 22 -10 20 -10 18Z" fill="#f5d3b3" ${sw(1.8)}/><path d="M-18 -10q-4 6 0 12M-22 -14q-6 10 0 20" stroke="${OS}" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+ monk:`<circle r="18" fill="#f5d3b3" ${sw()}/><path d="M-7 -2h4M3 -2h4" ${sw(2.2)}/><path d="M-5 8q5 4 10 0" ${sw(1.8)} fill="none"/><path d="M-18 -4C-18 -14 -10 -20 0 -20C10 -20 18 -14 18 -4" fill="none" stroke="${OS}" stroke-width="4"/><rect x="12" y="-24" width="13" height="13" rx="3" fill="${OK_}"/>${tx(18.5,-14,'3',10,OW)}`,
+ cal7:cal('7'),cal14:cal('14')+flame(16,-20,.45),
+ target:`<circle r="22" fill="${OW}" ${sw()}/><circle r="15" fill="${OS}"/><circle r="9" fill="${OW}"/><circle r="4" fill="${OS}"/><path d="M4 -4L22 -22M22 -22h-6M22 -22v6" ${sw(2.5)} fill="none"/>`,
+ moon:`<path d="M6 -24a20 20 0 1 0 18 28a16 16 0 0 1-18-28Z" fill="${OY}" ${sw()}/><g transform="translate(-6 6)"><ellipse cx="0" cy="4" rx="10" ry="12" fill="#8a6a4a" ${sw()}/><circle cx="-4" cy="-1" r="3.5" fill="${OW}" ${sw(1.5)}/><circle cx="4" cy="-1" r="3.5" fill="${OW}" ${sw(1.5)}/><circle cx="-4" cy="-1" r="1.5" fill="${OK_}"/><circle cx="4" cy="-1" r="1.5" fill="${OK_}"/><path d="M-1 3h2l-1 2Z" fill="#d9a03a"/></g>`,
+ sunrise:`<circle cx="0" cy="6" r="13" fill="${OS}"/>${[-60,-30,0,30,60].map(a=>`<path d="M0 -14V-22" transform="rotate(${a} 0 6)" stroke="${OS}" stroke-width="2.5" stroke-linecap="round"/>`).join('')}<path d="M-26 22L-6 4L2 10L8 6L26 22Z" fill="#4b6a8f" ${sw(1.6)}/><path d="M-6 4L-2 8L2 10L5 8L8 6" fill="${OW}"/>`,
+ gradcap:`<path d="M-24 -6L0 -16L24 -6L0 4Z" fill="${OK_}"/><path d="M-14 -2V10C-14 14 14 14 14 10V-2L0 4Z" fill="#2b2f33" ${sw(1.4)}/><path d="M18 -4V12" stroke="${OY}" stroke-width="2"/><circle cx="18" cy="14" r="3" fill="${OY}"/>${tx(0,-24,'先',8,OS)}`,
+ stamp:`<path d="M-8 -24H8L6 -8H-6Z" fill="#8a6416" ${sw(1.6)}/><rect x="-16" y="-8" width="32" height="10" rx="2" fill="#5a3a1a" ${sw(1.6)}/><circle cx="0" cy="16" r="10" fill="none" stroke="${OS}" stroke-width="3"/>${tx(0,20,'印',10,OS)}`,
+ stampbook:`<rect x="-20" y="-22" width="40" height="44" rx="3" fill="${OA}" ${sw()}/><rect x="-14" y="-16" width="28" height="32" rx="2" fill="${OW}"/>${[[-7,-8],[7,-8],[-7,8],[7,8]].map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="5.5" fill="none" stroke="${[OS,OA,OS,OG][i]}" stroke-width="1.8"/>`).join('')}`,
+ page:`<path d="M0 -14C-8 -20 -18 -20 -24 -18V18C-18 16 -8 16 0 22C8 16 18 16 24 18V-18C18 -20 8 -20 0 -14Z" fill="${OW}" ${sw()}/><path d="M0 -14V22" ${sw(1.5)}/>${[[-12,-4],[-12,8],[12,-4],[12,8]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="4.5" fill="none" stroke="${OS}" stroke-width="1.6"/>`).join('')}`,
+ booklet:`<rect x="-18" y="-22" width="36" height="44" rx="3" fill="${OS}" ${sw()}/><rect x="-12" y="-16" width="24" height="18" rx="2" fill="none" stroke="${OY}" stroke-width="1.6"/>${tx(0,-3,'帳',11,OY)}<path d="M8 6V26L12 22L16 26V6Z" fill="${OY}" ${sw(1.2)}/>`,
+ fuji:`<circle cx="14" cy="-14" r="7" fill="${OS}"/><path d="M-26 22L-8 -10H8L26 22Z" fill="#4b6a8f" ${sw()}/><path d="M-8 -10L-12 -2L-6 0L0 -4L6 0L12 -2L8 -10Z" fill="${OW}" ${sw(1.4)}/>`,
+ torii:`<path d="M-26 -16Q0 -24 26 -16L24 -10Q0 -16 -24 -10Z" fill="${OS}" ${sw(1.6)}/><path d="M-20 -4H20" stroke="${OS}" stroke-width="4"/><path d="M-14 -12V24M14 -12V24" stroke="${OS}" stroke-width="6"/><path d="M-14 -12V24M14 -12V24" ${sw(1.2)}/><path d="M0 -14V-4" stroke="${OK_}" stroke-width="3"/>`,
+ takoyaki:`<path d="M-24 6H24L18 20H-18Z" fill="#c9a26a" ${sw()}/>${[-12,0,12].map(x=>`<circle cx="${x}" cy="0" r="8" fill="#c8823a" ${sw(1.6)}/><path d="M${x-6} -2q3-3 6 0q3 3 6 0" stroke="#5a3a1a" stroke-width="1.8" fill="none"/>`).join('')}<path d="M-4 -6L8 -26" stroke="#c9a26a" stroke-width="2.5" stroke-linecap="round"/><path d="M-10 -4l2-2M2 -5l2 2M10 -4l2-2" stroke="${OM}" stroke-width="1.6"/>`,
+ finish:`<path d="M-24 20H24" ${sw(2.5)}/><path d="M-22 16V-4C-22 -10 -16 -14 -10 -14H0C6 -14 8 -8 8 -4V16Z" fill="${OW}" ${sw()}/><rect x="-18" y="-10" width="16" height="8" rx="2" fill="#9fd0e6"/><path d="M14 20V-24" ${sw(2.2)}/><rect x="14" y="-24" width="12" height="10" fill="${OW}" ${sw(1.4)}/><path d="M14 -24h4v5h-4ZM22 -24h4v5h-4ZM18 -19h4v5h-4Z" fill="${OK_}"/>`,
+ ear:`<path d="M-6 -22C6 -22 12 -14 12 -6C12 2 4 4 4 10C4 18 -2 22 -8 22C-14 22 -16 18 -16 14" fill="#f5d3b3" ${sw()}/><path d="M-4 -12C2 -12 4 -6 2 -2C0 2 -6 2 -6 6" fill="none" ${sw(1.8)}/><path d="M18 -10q5 6 0 12M24 -16q9 12 0 24" stroke="${OA}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`,
+ turtle:`<path d="M-18 8C-18 -6 -8 -14 2 -14C12 -14 20 -6 20 8Z" fill="${OM}" ${sw()}/><path d="M-8 8L-4 -6L8 -6L12 8M-12 0H16" stroke="#4f6b2a" stroke-width="1.6" fill="none"/><circle cx="-22" cy="4" r="6" fill="#a9c472" ${sw(1.6)}/><circle cx="-24" cy="2" r="1.4" fill="${OK_}"/><path d="M-12 8v8M14 8v8" ${sw(4)}/>${tx(20,-14,'0.7×',8,OA)}`,
+ camera:`<rect x="-24" y="-12" width="48" height="32" rx="5" fill="#3b4045" ${sw()}/><path d="M-10 -12L-6 -20H6L10 -12Z" fill="#3b4045" ${sw(1.6)}/><circle cx="0" cy="4" r="11" fill="#9fd0e6" ${sw(2)}/><circle cx="0" cy="4" r="5" fill="#2b4c7e"/><circle cx="16" cy="-6" r="2.5" fill="${OS}"/>`,
+ mute:`<path d="M-22 -8H-12L0 -18V18L-12 8H-22Z" fill="${OK_}"/><path d="M8 -8L22 6M22 -8L8 6" stroke="${OS}" stroke-width="3.5" stroke-linecap="round"/>${tx(14,22,'静',9,OA)}`,
+ redeem:`<path d="M-16 8A17 17 0 1 1 6 16" fill="none" stroke="${OM}" stroke-width="4" stroke-linecap="round"/><path d="M6 16l-2-9M6 16l-9 0" stroke="${OM}" stroke-width="4" stroke-linecap="round"/><circle r="6" fill="${OS}"/>`,
+ crown:`<path d="M-24 14L-22 -14L-10 0L0 -20L10 0L22 -14L24 14Z" fill="${OY}" ${sw()}/><rect x="-24" y="14" width="48" height="8" rx="2" fill="${OG}" ${sw(1.6)}/><circle cx="0" cy="4" r="4" fill="${OS}"/><circle cx="-12" cy="8" r="2.5" fill="${OA}"/><circle cx="12" cy="8" r="2.5" fill="${OA}"/>`,
+ brush:`<path d="M10 -24L20 -14L-2 8L-12 -2Z" fill="#8a6416" ${sw(1.6)}/><path d="M-12 -2L-2 8C-6 16 -16 22 -24 22C-24 14 -18 4 -12 -2Z" fill="${OK_}"/>${tx(10,18,'あ',16,OS)}`,
+ bag:`<path d="M-16 -8h32l3 30h-38Z" fill="${OW}" ${sw()}/><path d="M-8 -8c0-14 16-14 16 0" fill="none" ${sw(2.5)}/><path d="M-26 -22L26 24" stroke="${OS}" stroke-width="4" stroke-linecap="round"/><circle r="27" fill="none" stroke="${OS}" stroke-width="4"/>`,
+ microwave:`<rect x="-24" y="-16" width="48" height="32" rx="4" fill="#d9dde1" ${sw()}/><rect x="-18" y="-10" width="26" height="20" rx="2" fill="#3b4045"/><path d="M-12 6h14v-6h-14Z" fill="${OY}"/><path d="M14 -10v4M14 0v4M14 8v2" ${sw(2.5)}/><path d="M-12 -24q3-4 0-8M-4 -24q3-4 0-8M4 -24q3-4 0-8" stroke="#9aa1a6" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+ card:`<rect x="-24" y="-15" width="48" height="30" rx="4" fill="${OA}" ${sw()}/><rect x="-24" y="-8" width="48" height="6" fill="${OK_}"/><rect x="-18" y="4" width="10" height="7" rx="1.5" fill="${OY}"/><path d="M0 8h16" stroke="${OW}" stroke-width="2" stroke-linecap="round"/><path d="M18 -22l3 4M24 -18l-4 1" stroke="${OG}" stroke-width="2" stroke-linecap="round"/>`,
+ chili:`<path d="M-18 14C-6 22 14 12 18 -8C19 -14 14 -14 12 -8C8 4 -2 10 -16 8Z" fill="${OS}" ${sw()}/><path d="M14 -10c0-6 4-10 8-11" stroke="${OM}" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M-10 -6c2-6-2-10 1-16 3 5 6 7 3 13 4-2 5-6 5-9 4 5 3 11-1 14Z" fill="#f0a020"/>`,
+ rice:`<path d="M-22 0H22A22 20 0 0 1 -22 0Z" fill="${OW}" ${sw()}/><path d="M-20 0C-18 -10 18 -10 20 0" fill="${OW}" ${sw(1.6)}/><path d="M-10 4h20" stroke="${OS}" stroke-width="2.5"/><path d="M-4 -24L14 -2M4 -26L20 -4" stroke="#8a6416" stroke-width="2.5" stroke-linecap="round"/>`,
+ ramen:`<path d="M-24 -2h48a24 20 0 0 1-48 0Z" fill="${OS}" ${sw()}/><path d="M-20 -2c4-6 8 2 12-4s8 2 12-4 8 2 12-4 4 4 8 2" stroke="${OY}" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="10" cy="-6" r="5" fill="${OW}" ${sw(1.5)}/><circle cx="10" cy="-6" r="2.2" fill="#f0a020"/><path d="M-6 -26l20 18M2 -28l16 20" stroke="#8a6416" stroke-width="2.5" stroke-linecap="round"/><g transform="translate(-14 -18) rotate(-18)"><rect x="-9" y="-6" width="18" height="12" rx="1.5" fill="${OW}" ${sw(1.5)}/><path d="M-5 -1h10M-5 2h6" stroke="${OS}" stroke-width="1.5"/></g>`,
+ receipt:`<path d="M-14 -24H14V22L9 18L4 22L0 18L-4 22L-9 18L-14 22Z" fill="${OW}" ${sw()}/><path d="M-8 -14H8M-8 -6H4M-8 2H8" ${sw(1.5)}/>${tx(0,15,'¥',9,OS)}<path d="M14 -10l8 0M18 -14v8" stroke="${OM}" stroke-width="2.4" stroke-linecap="round"/>`,
+ scroll:`<rect x="-16" y="-18" width="32" height="36" fill="${OW}" ${sw()}/><rect x="-20" y="-22" width="40" height="6" rx="3" fill="#8a6416" ${sw(1.4)}/><rect x="-20" y="16" width="40" height="6" rx="3" fill="#8a6416" ${sw(1.4)}/>${[6,0,-6].map(x=>`<path d="M${x} -12V10" stroke="${OK_}" stroke-width="2.2" stroke-dasharray="4 2.5"/>`).join('')}`,
+ store:`<rect x="-24" y="-8" width="48" height="30" fill="${OW}" ${sw()}/><rect x="-24" y="-14" width="48" height="6" fill="${OA}"/><rect x="-24" y="-8" width="48" height="3" fill="${OS}"/><rect x="-16" y="2" width="14" height="20" fill="#9fd0e6" ${sw(1.4)}/><rect x="4" y="2" width="14" height="12" fill="#9fd0e6" ${sw(1.4)}/><path d="M-10 -26L-4 -18L0 -24L4 -18L10 -26L8 -16H-8Z" fill="${OY}" ${sw(1.2)}/>`,
+ peek:`<rect x="-26" y="2" width="52" height="22" fill="#c9a26a" ${sw()}/><path d="M-26 12H26M-8 2V12M10 12V24" stroke="#8a6416" stroke-width="1.4"/><path d="M-14 2C-14 -12 14 -12 14 2" fill="#f5d3b3" ${sw()}/><circle cx="-6" cy="-4" r="3.2" fill="${OW}" ${sw(1.2)}/><circle cx="6" cy="-4" r="3.2" fill="${OW}" ${sw(1.2)}/><circle cx="-5" cy="-4" r="1.5" fill="${OK_}"/><circle cx="7" cy="-4" r="1.5" fill="${OK_}"/><path d="M-20 4v-6M20 4v-6" ${sw(4)}/>`,
+ daru1:daruIcon(1),daru2:daruIcon(2),
+};
+const ACH_ICON={n123:'blocks',n10:'sheep',nshi:'elevator',n8:'fan',nall:'abacus',nyen:'coin',ntime:'clock',
+ sexit:'exit',snews:'compass',sgate:'gate',strack:'track',strans:'transfer',sloo:'toilet',sall:'cap',
+ dlr:'lr',dstr:'road',dblue:'signal',dall:'pin',psumi:'bow',pagain:'again',pgator:'gator',ppoint:'finger',pall:'bubbles',
+ c5:'flame1',c10:'flame2',c20:'bullet',cflaw:'shine',cclutch:'clutch',czan:'fallen',cquick:'bolt',
+ dfirst:'wave',d3:'monk',d7:'cal7',d14:'cal14',dgoal:'target',dowl:'moon',dbird:'sunrise',dsenpai:'gradcap',
+ st1:'stamp',st25:'stampbook',stpage:'page',stall:'booklet',jfuji:'fuji',jkyoto:'torii',josaka:'takoyaki',jend:'finish',
+ mear:'ear',mslow:'turtle',mpic:'camera',mmute:'mute',mredeem:'redeem',mall:'crown',mkana:'brush',
+ fbag:'bag',fheat:'microwave',fcard:'card',fspicy:'chili',fitada:'rice',fticket:'ramen',fbill:'receipt',fsent:'scroll',fall:'store',
+ mpeek:'peek',deye1:'daru1',deye2:'daru2'};
+const CORD={num:OG,sign:OS,dir:OA,phr:OK_,combo:OS,daily:OG,col:'#c8102e',misc:'#4a4743',food:OA};
+TIERS.b.n='Common';TIERS.s.n='Rare';TIERS.g.n='Epic';TIERS.p.n='Legendary';
+const MATN={b:'wood',s:'silver',g:'gold leaf',p:'holographic'};
+const MATDEF={
+ b:u=>`<linearGradient id="m${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7a56c"/><stop offset=".5" stop-color="#b9824a"/><stop offset="1" stop-color="#9c6a38"/></linearGradient>`,
+ s:u=>`<linearGradient id="m${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f9fb"/><stop offset=".35" stop-color="#b9c0c7"/><stop offset=".55" stop-color="#eef1f4"/><stop offset="1" stop-color="#9aa2aa"/></linearGradient>`,
+ g:u=>`<linearGradient id="m${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe7a1"/><stop offset=".35" stop-color="#c8962f"/><stop offset=".6" stop-color="#f3d77e"/><stop offset="1" stop-color="#a87a22"/></linearGradient>`,
+ p:(u,anim)=>`<linearGradient id="m${u}" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect"><stop offset="0" stop-color="#ffc4e3"/><stop offset=".25" stop-color="#b8ecff"/><stop offset=".5" stop-color="#d4ffc2"/><stop offset=".72" stop-color="#fff0b0"/><stop offset="1" stop-color="#dcc4ff"/>${anim?`<animateTransform attributeName="gradientTransform" type="translate" values="-.35 -.35;.35 .35;-.35 -.35" dur="4s" repeatCount="indefinite"/>`:''}</linearGradient>`};
+function matTex(t,anim){
+ if(t==='b')return `<g opacity=".22" stroke="#5a3a1a" stroke-width="1.2" fill="none">${[0,1,2,3,4,5,6].map(i=>`<path d="M22 ${40+i*20}C45 ${34+i*20} 70 ${48+i*20} 98 ${38+i*20}"/>`).join('')}</g>`;
+ if(t==='s')return `<g opacity=".18" stroke="#5f676e" stroke-width="1" fill="none">${[0,1,2,3,4,5,6,7].map(i=>`<path d="M${10+i*16} 176L${50+i*16} 22"/>`).join('')}</g>`;
+ if(t==='g')return `<g opacity=".25" stroke="#8a6416" stroke-width="1" fill="none">${[0,1,2,3,4,5].map(r=>[0,1,2,3].map(c=>{const x=30+c*20+(r%2)*10,y=42+r*24;return `<path d="M${x} ${y-8}L${x+8} ${y}L${x} ${y+8}L${x-8} ${y}Z"/>`}).join('')).join('')}</g>`;
+ return `<path d="M20 30L100 120V176H60L20 90Z" fill="#fff" opacity=".35"/><g fill="#fff">${[[34,52],[88,70],[44,150],[86,136],[30,112]].map(([x,y],i)=>`<path d="M${x} ${y-6}L${x+1.6} ${y-1.6}L${x+6} ${y}L${x+1.6} ${y+1.6}L${x} ${y+6}L${x-1.6} ${y+1.6}L${x-6} ${y}L${x-1.6} ${y-1.6}Z">${anim?`<animate attributeName="opacity" values="1;.15;1" dur="${1.4+i*.35}s" repeatCount="indefinite"/>`:''}</path>`).join('')}</g>`}
+const OM_BODY='M20 40Q20 24 36 22L84 22Q100 24 100 40L100 168Q100 176 92 176L28 176Q20 176 20 168Z';
+function charmSVG(a,on){const u=++UID,t=a.t,cord=CORD[a.g]||OS,secret=a.secret&&!on,ic=ICONS[ACH_ICON[a.id]]||'';
+  if(!on)return `<svg viewBox="0 0 120 190" xmlns="http://www.w3.org/2000/svg" class="charm locked" aria-hidden="true">
+   <path d="M52 22C40 10 46 2 56 8L60 14L64 8C74 2 80 10 68 22" fill="none" stroke="#c9c0ae" stroke-width="5" stroke-linecap="round"/>
+   <path d="${OM_BODY}" fill="#e6e0d4" stroke="#c9c0ae" stroke-width="1.5"/><path d="M28 34H92V166H28Z" fill="none" stroke="#d3cbbb" stroke-width="1.4" stroke-dasharray="3 3"/>
+   <rect x="40" y="18" width="40" height="9" rx="4" fill="#c9c0ae"/><circle cx="60" cy="88" r="31" fill="#efe9dd" stroke="#d3cbbb" stroke-width="1.5"/>
+   ${secret?`<text x="60" y="99" font-size="30" font-weight="900" fill="#c9c0ae" text-anchor="middle" font-family="${JPF}">?</text>`:`<g transform="translate(60 88)" opacity=".22" style="filter:grayscale(1)">${ic}</g>`}</svg>`;
+  return `<svg viewBox="0 0 120 190" xmlns="http://www.w3.org/2000/svg" class="charm" aria-hidden="true"><defs>${MATDEF[t](u,t==='p')}<clipPath id="c${u}"><path d="${OM_BODY}"/></clipPath></defs>
+   <path d="M52 22C40 10 46 2 56 8L60 14L64 8C74 2 80 10 68 22" fill="none" stroke="${cord}" stroke-width="5" stroke-linecap="round"/>
+   <path d="${OM_BODY}" fill="url(#m${u})" stroke="rgba(0,0,0,.25)" stroke-width="1.5"/><g clip-path="url(#c${u})">${matTex(t,t==='p')}</g>
+   <path d="M28 34H92V166H28Z" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.4" stroke-dasharray="3 3"/>
+   <rect x="40" y="18" width="40" height="9" rx="4" fill="${cord}"/>
+   <circle cx="60" cy="88" r="31" fill="#fbf9f4" stroke="rgba(0,0,0,.18)" stroke-width="1.5"/><g transform="translate(60 88)">${ic}</g>
+   <rect x="47" y="132" width="26" height="26" rx="3" fill="#d23b2a"/><rect x="50" y="135" width="20" height="20" rx="1.5" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1"/>
+   <text x="60" y="151" font-size="${[...a.glyph].length>1?10:14}" font-weight="900" fill="#fff" text-anchor="middle" font-family="${JPF}">${a.glyph}</text></svg>`}
+badgeSVG=charmSVG;
+
+/* ---- collector's book ---- */
+function achBook(){S=null;sheet.innerHTML='';sheet.className='';closeRef();
+  const n=Object.keys(P.ach).length,cnt=k=>ACH.filter(a=>a.t===k&&P.ach[a.id]).length;
+  app.innerHTML=topBar(true)+`<section class="pack-head"><div class="ph-row"><div class="pack-badge big jp" style="background:#c8102e">守</div>
+   <div><div class="kicker">お守り · Achievements</div><h1>Collector's book</h1></div></div>
+   ${progBar({n:ACH.length,m:n,l:0},1)}
+   <div class="legend"><span>${n} / ${ACH.length} charms</span><span><i class="mt mt-b"></i>Wood ${cnt('b')}</span><span><i class="mt mt-s"></i>Silver ${cnt('s')}</span><span><i class="mt mt-g"></i>Gold ${cnt('g')}</span><span><i class="mt mt-p"></i>Holo ${cnt('p')}</span><span class="pct-big">${Math.round(n/ACH.length*100)}%</span></div></section>
+  ${Object.entries(GROUPS).map(([gk,g])=>{const list=ACH.filter(a=>a.g===gk);if(!list.length)return '';const got=list.filter(a=>P.ach[a.id]).length;
+   return `<section class="shelf"><div class="ag-head"><span class="ag-k jp" style="background:${CORD[gk]||g.c2}">${g.jp}</span><h3>${g.name}</h3><span class="ag-n">${got} / ${list.length}</span></div>
+    <div class="cgrid">${list.sort((a,b)=>(!!P.ach[b.id])-(!!P.ach[a.id])||'bsgp'.indexOf(a.t)-'bsgp'.indexOf(b.t)).map(a=>{const on=!!P.ach[a.id];
+     return `<button class="cslot${on?' on':''}" data-ach="${a.id}" aria-label="${on||!a.secret?a.name:'Hidden charm'}">${charmSVG(a,on)}<span>${on||!a.secret?a.name:'???'}</span></button>`}).join('')}</div></section>`}).join('')}`;
+  app.querySelector('#back').onclick=hub;
+  app.querySelectorAll('[data-ach]').forEach(b=>b.onclick=()=>charmDetail(b.dataset.ach));scrollTo(0,0)}
+function charmDetail(id){const a=ACH.find(x=>x.id===id);if(!a)return;closeRef();
+  const on=!!P.ach[a.id],hid=a.secret&&!on,p=!on&&a.prog?a.prog():null,fmt=t=>new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});
+  const m=document.createElement('div');m.className='modal';m.id='refModal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');
+  m.innerHTML=`<div class="modal-panel cdet"><div class="modal-head"><span class="tier t-${a.t}">${TIERS[a.t].n} · ${MATN[a.t]}</span><button class="icon-btn" id="refClose" aria-label="Close">${I.x}</button></div>
+   <div class="cbig${on&&a.t==='p'?' holo':''}">${charmSVG(a,on)}</div>
+   <h2>${hid?'Hidden charm':a.name}</h2><p>${hid?'Keep playing to discover this one.':a.desc}</p>
+   ${p?`<div class="aprog"><div class="bar"><i style="width:${p[0]/p[1]*100}%"></i></div><small>${p[0]} / ${p[1]}</small></div>`:''}
+   <small class="cwhen">${on?`Collected ${fmt(P.ach[a.id])}`:'Not collected yet'}</small></div>`;
+  m.onclick=e=>{if(e.target===m)closeRef()};document.body.appendChild(m);m.querySelector('#refClose').onclick=closeRef;m.querySelector('#refClose').focus()}
+
+/* ---- ガチャ reveal ---- */
+SFX.clack=(at=0)=>{noise(at,.035,3200,3,.5);tone(1900,at,.04,'triangle',.08)};
+SFX.pop=()=>{noise(0,.08,1200,1,.7);tone(500,0,.16,'sine',.3,1400);tone(1600,.05,.12,'triangle',.1)};
+const capSVG=`<svg viewBox="-50 -50 100 100" class="cap"><g class="ctop"><path d="M-40 -2A40 40 0 0 1 40 -2Z" fill="#bfe3f2" fill-opacity=".6" stroke="#8fb9cc" stroke-width="2"/><rect x="-12" y="-30" width="24" height="26" rx="5" fill="#b8892e" opacity=".55"/><path d="M-28 -16A32 32 0 0 1 -8 -32" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8" fill="none"/></g>
+ <g class="cbot"><path d="M-40 2A40 40 0 0 0 40 2Z" fill="#2b4c7e"/><path d="M-41 2H41" stroke="#3d5f94" stroke-width="5"/><path d="M-26 16A28 28 0 0 0 -10 28" stroke="#fff" stroke-width="3.5" stroke-linecap="round" opacity=".35" fill="none"/></g></svg>`;
+const GQ=[];let gBusy=false;
+function gacha(a){GQ.push(a);if(!gBusy)nextGacha()}
+function nextGacha(){const a=GQ.shift();if(!a){gBusy=false;return}gBusy=true;
+  const o=document.createElement('div');o.className='gacha';o.setAttribute('role','dialog');o.setAttribute('aria-label','New charm: '+a.name);
+  o.innerHTML=`<div class="g-stage"><div class="g-rays"></div><div class="g-cap">${capSVG}</div><div class="g-ono">ガチャ</div>
+   <div class="g-reveal"><div class="g-kick t-${a.t}">New charm · ${TIERS[a.t].n}</div><div class="g-charm${a.t==='p'?' holo':''}">${charmSVG(a,1)}</div><h2>${a.name}</h2><p>${a.desc}</p>
+    <div class="g-btns"><button class="btn primary" data-g="ok">Collect${GQ.length?` (${GQ.length} more)`:''}</button><button class="btn blue" data-g="book">View in book</button></div></div>
+   <div class="g-tap">Tap to open</div></div>`;
+  document.body.appendChild(o);SFX.clack(0);SFX.clack(.12);
+  let opened=false;const open=()=>{if(opened)return;opened=true;o.classList.add('open');SFX.pop();setTimeout(()=>{SFX.ach();if(a.t==='p'||a.t==='g'){burst(innerWidth/2,innerHeight*.4,a.t==='p'?80:45,13);if(a.t==='p')setTimeout(()=>rain(140),200)}},260)};
+  setTimeout(()=>{if(!opened){o.classList.add('rattle');SFX.clack(0);SFX.clack(.18);SFX.clack(.36)}},500);
+  const auto=setTimeout(open,RM?100:1900);
+  o.onclick=e=>{const b=e.target.closest('[data-g]');if(!opened){clearTimeout(auto);open();return}if(!b)return;
+    o.classList.add('out');setTimeout(()=>{o.remove();if(b.dataset.g==='book'){GQ.length=0;gBusy=false;achBook()}else nextGacha()},220)};
+}
+const PEND=[];
+const _nextN=nextN;
+nextN=function(){const n=NQ[0];
+  if(n&&n.k==='ach'){NQ.shift();
+    if(S&&!S.ended){PEND.push(n.a);toast(`<span class="tchip">守</span>Charm earned! Open it after the lesson`,'charm');nextN();return}
+    gacha(n.a);nextN();return}
+  _nextN()};
+function playPending(){if(PEND.length){PEND.splice(0).forEach(gacha)}}
+let GHOLD=0;
+{const _ng=nextGacha;nextGacha=function(){const w=GHOLD-Date.now();if(w>0&&GQ.length){gBusy=true;setTimeout(()=>{GHOLD=0;_ng()},w);return}_ng()}}
+{const _dv=deckView;deckView=function(...a){_dv(...a);setTimeout(playPending,350)}}
+{const _hb=hub;hub=function(...a){_hb(...a);setTimeout(playPending,350)}}
 
 hub();
 </script>
