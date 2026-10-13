@@ -854,6 +854,75 @@ h1,h2,h3,h4,.brand,.hero-jp{font-family:var(--f-ui)}
 @keyframes inkIn{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(75% at 50% 50%)}}
 @keyframes gpulse{0%{box-shadow:0 0 0 0 rgba(110,139,61,.65)}100%{box-shadow:0 0 0 14px rgba(110,139,61,0)}}
 @media (prefers-reduced-motion:reduce){.app.scr-in,.n-stamp .nb svg,.n-stamp .nb::after,.wdot.ink-in{animation:none!important}}
+/* ===== feedback batch 1 ===== */
+.mini-seg{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;margin:0 0 10px}
+.mini-seg span{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-right:4px}
+.mini-seg button{border:1.5px solid var(--line)!important;background:var(--surface)!important;color:var(--fg)!important;text-decoration:none!important;border-radius:99px;padding:5px 12px!important;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.mini-seg button[aria-pressed="true"]{background:var(--ink)!important;color:var(--bg)!important;border-color:var(--ink)!important}
+.read-note{margin:-4px 0 0;text-align:center;font-size:12px;font-weight:700;color:var(--muted)}
+.ro-help{display:block;font-family:var(--f-en,inherit);font-size:15px;font-weight:700;color:var(--blue);letter-spacing:.02em;margin-top:2px}
+.opt .ro-help{font-size:12px;margin-top:1px}
+.opt.right .ro-help,.opt.wrong .ro-help{color:inherit}
+.face.front .ro-help{font-size:20px;margin-top:6px}
+.opt{position:relative}
+.opt-say{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--sunk);color:var(--blue);cursor:pointer}
+.opt-say svg{width:16px;height:16px}
+.opt:has(.opt-say) .t{padding-right:34px}
+#reset.arm{color:var(--shu)!important;font-weight:900}
+/* ===== guide ===== */
+.guide-banner{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;gap:10px;width:100%;margin-top:4px;padding:10px 12px;border-radius:16px;border:2px solid var(--gold);background:linear-gradient(90deg,rgba(184,137,46,.10),rgba(210,59,42,.06));color:var(--fg);font:inherit;text-align:center;cursor:pointer;box-shadow:0 3px 0 rgba(184,137,46,.35)}
+.guide-banner:active{transform:translateY(1px)}
+.guide-banner .g-ico svg{width:46px;height:auto;display:block}
+.guide-banner .g-hm{transform:rotate(-8deg)}.guide-banner .g-dm{transform:rotate(6deg)}
+.gb-txt{display:grid;gap:2px}.gb-txt b{font-size:17px;font-weight:900}.gb-txt small{font-size:12px;font-weight:700;color:var(--muted)}
+.gb-new{font-style:normal;font-size:10px;font-weight:900;letter-spacing:.08em;background:var(--shu);color:#fff;border-radius:6px;padding:2px 6px;vertical-align:3px;margin-left:4px}
+.help-btn{flex:none;font-weight:900;font-size:15px;color:var(--gold-d)!important;border:2px solid var(--gold)!important;border-radius:50%!important;width:28px;height:28px;min-width:28px;display:grid;place-items:center;padding:0!important;background:var(--surface)}
+.top .chips{flex-wrap:nowrap;min-width:0}
+.g-panel{max-width:460px;gap:12px}
+.g-panel h2{margin:0;font-size:22px;line-height:1.25}.g-panel h2 .jp{color:var(--shu);margin-right:4px}
+.g-help h2{font-size:19px;margin-top:2px}
+.g-body{display:grid;gap:10px;font-size:15px;line-height:1.5}
+.g-body p,.g-body ul{margin:0}.g-body ul{padding-left:20px;display:grid;gap:6px}
+.g-art{display:flex;justify-content:center;align-items:center;gap:14px;min-height:96px}
+.g-art .dar svg{width:92px;height:auto}
+.g-chips span{width:56px;height:56px;border-radius:14px;color:#fff;font:900 28px var(--f-jp,inherit);display:grid;place-items:center;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.g-icons svg,.g-book svg{width:84px;height:84px}
+.g-tip{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--green-soft)}
+.g-tip p{margin:0;font-size:14px}
+.g-tip .g-ico svg{width:38px;height:auto;display:block}
+.g-warn{background:var(--sunk)}
+.g-warn .g-ico svg{width:34px}
+.g-start{font-size:14px;text-align:center;padding:8px;border-radius:10px;border:1.5px dashed var(--gold)}
+.g-dots{display:flex;justify-content:center;gap:6px}.g-dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}.g-dots i.on{background:var(--shu);width:20px;border-radius:99px}
+@media (min-width:960px){.guide-banner{grid-template-columns:60px 1fr 60px}.guide-banner .g-ico svg{width:54px}}
+.g-hm svg path{stroke-width:6}
+.guide-banner .g-hm svg{width:50px}
+/* ---- Kana dojo ---- */
+.dojo-rows{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.drow2{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px 10px 10px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.drow2 .dr-k{display:flex;font-size:20px;font-weight:700;min-width:105px}
+.drow2 .dr-k span{width:21px;text-align:center}
+.drow2 .dr-meta{display:flex;flex-direction:column;min-width:0}
+.drow2 .dr-meta b{font-size:14px}.drow2 .dr-meta small{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.drow2 .dr-act{display:flex;align-items:center;gap:6px}
+.drow2 .dr-act .btn{padding:8px 14px;min-height:0;font-size:14px}
+.drow2 .dr-ok svg{width:30px;height:auto;display:block}
+.drow2 .dr-lock{color:var(--muted);opacity:.6;display:flex}.drow2 .dr-lock svg{width:20px;height:20px}
+.drow2.cur{border-color:var(--shu);box-shadow:0 0 0 2px var(--shu-soft)}
+.drow2.done{background:var(--green-soft)}.drow2.done .dr-meta b::after{content:' ✓';color:var(--green)}
+.drow2.locked .dr-k,.drow2.locked .dr-meta{opacity:.45}
+.dojo-learn,.dojo-drill{gap:16px}
+.dl-card{position:relative;align-self:center;width:min(260px,80%);aspect-ratio:1/1;border-radius:24px;border:2px solid var(--line);background:var(--paper,var(--surface));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.dl-card.sm{width:min(180px,60%)}
+.dl-k{font-size:120px;line-height:1;font-family:var(--f-jp);font-weight:500}
+.dl-card.sm .dl-k{font-size:92px}
+.dl-ro{font-size:26px;font-weight:800;color:var(--shu);letter-spacing:.02em}
+.dl-ro.big-ro{font-size:46px}
+.dl-say{position:absolute;top:10px;right:10px}
+.g-tip.g-warn{background:var(--gold-soft,var(--sunk))}
+.dj-opts .dj-k{font-size:30px;font-weight:600}
+.dj-fb{font-size:24px;font-weight:700}
+.t-dojo .t3i{font-weight:900}
 </style>
 </head>
 <body>
@@ -1288,7 +1357,9 @@ function topbar(){
     <div class="bar"><i style="width:${S.done/S.total*100}%"></i></div>
     ${S.hearts!==null?`<div class="hearts">${I.heart}${S.hearts}</div>`:`<div class="hearts" style="color:var(--muted)">${S.done}/${S.total}</div>`}<div class="combo" id="combo" hidden></div>${muteBtn()}</div>`;
 }
+let SPEAK_GEN=0;
 function render(){
+  SPEAK_GEN++;try{if(cur)cur.pause()}catch(e){}
   if(!S.queue.length||S.hearts===0)return finish();
   const c=S.queue[0];S.cur=c;
   S.mode==='flash'?flash(c):quiz(c);
@@ -1319,7 +1390,7 @@ function flash(c){
 }
 function rateSheet(c){
   sheet.className='sheet';
-  sheet.innerHTML=`<div class="sheet-in"><div class="row2"><button class="btn danger" id="again">Again</button><button class="btn go" id="good">Got it</button></div></div>`;
+  sheet.innerHTML=`<div class="sheet-in"><div class="row2"><button class="btn danger" id="again">Not yet ↻</button><button class="btn go" id="good">Got it ✓</button></div></div>`;
   sheet.querySelector('#again').onclick=()=>grade(c,false);
   sheet.querySelector('#good').onclick=()=>grade(c,true);
 }
@@ -1336,7 +1407,7 @@ function grade(c,ok){
 }
 function quiz(c){
   const toEn=Math.random()<.6, pool=shuffle(cardsOf(S.deck==='mix'?c.deck:S.deck).filter(x=>x.id!==c.id&&x.en!==c.en)).slice(0,3);
-  const opts=shuffle([c,...pool]); S.sel=null;S.checked=false;
+  const opts=shuffle([c,...pool]); S.sel=null;S.checked=false;S.opts=opts;S.toEn=toEn;
   const lbl=x=>toEn?x.en:x.jp, longOpts=opts.some(o=>lbl(o).length>(toEn?14:6));
   app.innerHTML=topbar()+`<div class="stage">
     <div class="prompt-label">${toEn?'What does this mean?':'Pick the Japanese'}</div>
@@ -1361,7 +1432,7 @@ function quiz(c){
     const ri=opts.findIndex(o=>o.id===c.id);
     ok?good(btns[ri],S.missed.has(c.id)?1:2):bad(btns[S.sel],true);
     onAnswer(c,ok);
-    setTimeout(()=>speak(c.id),ok?420:520);
+    {const g=SPEAK_GEN;setTimeout(()=>{if(g===SPEAK_GEN)speak(c.id)},ok?420:520)}
     sheet.className='sheet anim '+(ok?'good':'bad');
     sheet.innerHTML=`<div class="sheet-in"><div class="fb"><div class="dot">${ok?hanamaru(hmStage(S.combo)):daruma(0)}</div><div style="flex:1;min-width:0">
       <h4>${ok?pickOne(['正解! Correct','いいね! Nice','すごい! Great','その通り! Exactly']):'惜しい! So close'}</h4>
@@ -1630,7 +1701,12 @@ function journeyView(){S=null;sheet.innerHTML='';sheet.className='';closeRef();
      <div class="sinfo"><div class="sname"><span class="jp">${s.jp}</span> ${s.en}<em>${s.km} km</em>${cur?`<span class="here">${I.train} You are here</span>`:''}</div>
      <p>${reached?s.fact:`${s.km-j.km} km to go. Arrive to unlock this stop.`}</p></div></li>`}).join('')}</ol>`;
   app.querySelector('#back').onclick=hub;
-  app.querySelector('#tripdate').onchange=e=>{P.trip=e.target.value;save();journeyView()};scrollTo(0,0)}
+  {const inp=app.querySelector('#tripdate');let tmr=0;
+   const ok=v=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(v))return false;const y=+v.slice(0,4),d=new Date(v+'T00:00');return !isNaN(d)&&y>=2024&&y<=new Date().getFullYear()+3};
+   const redraw=()=>{clearTimeout(tmr);tmr=setTimeout(()=>{if(document.activeElement!==inp)journeyView()},700)};
+   inp.onchange=e=>{const v=e.target.value;if(!v){P.trip='';save();redraw();return}if(ok(v)){P.trip=v;save();redraw()}};
+   inp.onblur=()=>{if(inp.value&&!ok(inp.value))inp.value=P.trip;if(P.trip!==(inp.dataset.v||''))journeyView()};inp.dataset.v=P.trip}
+  scrollTo(0,0)}
 
 /* ---- achievement book (Steam-style) ---- */
 function achBook(){S=null;sheet.innerHTML='';sheet.className='';closeRef();
@@ -2224,7 +2300,7 @@ function arcAnswer(i){if(!A||!A.live||A.ans)return;
 function arcMiss(el){A.combo=0;A.lives--;A.miss.set(A.cur.id,A.cur);updArcCombo();
   if(el){SFX.wrong();vignette();jolt(el);const p=center(el);floatText('コン',p.x-60,p.top-20,'kon')}
   const t=app.querySelector('.arc-tix');if(t){t.innerHTML=Array.from({length:LIVES},(_,i)=>ticket(i<A.lives)).join('');jolt(t,'hit')}
-  setTimeout(()=>{if(A&&A.live)speak(A.cur.id)},el?450:1300)}
+  {const c=A.cur;setTimeout(()=>{if(A&&A.live&&A.cur===c)speak(c.id)},el?450:1300)}}
 function arcAfterMiss(){if(!A||!A.live)return;document.querySelectorAll('.arc-doors').forEach(d=>d.remove());A.lives<=0?arcEnd():arcQ()}
 function arcTimeout(){if(!A||!A.live||A.ans)return;arcLock();
   const c=A.cur,ri=A.opts.findIndex(o=>o.id===c.id),btns=[...app.querySelectorAll('.opt')];if(btns[ri])btns[ri].classList.add('right');
@@ -2796,7 +2872,10 @@ function ensureP(){const d={boxes:{},days:{},ach:{},cnt:{},stamps:{},fav:{},wp:{
 ensureP();
 {const _hb=hub;hub=function(...a){ensureP();_hb(...a);
   const r=app.querySelector('#reset');if(r)r.onclick=e=>{const b=e.currentTarget;
-    if(!b.dataset.c){b.dataset.c=1;b.textContent='Tap again to wipe all progress';return}
+    if(!b.dataset.c){b.dataset.c=1;let n=4;const tick=()=>{if(!b.isConnected||!b.dataset.c)return;
+        if(n<=0){delete b.dataset.c;b.textContent='Reset progress';b.classList.remove('arm');return}
+        b.textContent=`Tap again to wipe ALL progress (${n})`;n--;b._t=setTimeout(tick,1000)};b.classList.add('arm');tick();return}
+    clearTimeout(b._t);
     const keep={mode:P.mode,sfx:P.sfx,trip:P.trip,dragScroll:P.dragScroll};P={...keep};ensureP();save();location.reload()}}}
 /* safety net: if anything still throws, offer a way back instead of a frozen screen */
 let GUARD_SHOWN=false;
@@ -2837,6 +2916,268 @@ if(NAV_ON){
   document.addEventListener('click',()=>setTimeout(navSync,60),true);
   document.addEventListener('keydown',()=>setTimeout(navSync,60),true);
 }
+
+/* ================= tester feedback, batch 1 =================
+   theme switch (Auto / Light / Dark) · reading help (Off / Kana / Romaji) · tap-to-hear quiz answers */
+/* --- theme --- */
+if(!['auto','light','dark'].includes(P.theme))P.theme='auto';
+function applyTheme(){const r=document.documentElement;if(P.theme==='auto')delete r.dataset.theme;else r.dataset.theme=P.theme}
+applyTheme();
+/* the claude.ai viewer may set data-theme itself: an explicit choice wins */
+try{new MutationObserver(()=>{if(P.theme!=='auto'&&document.documentElement.dataset.theme!==P.theme)applyTheme()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}catch(e){}
+const segHTML=(id,label,val,opts)=>`<div class="mini-seg" role="group" aria-label="${label}"><span>${label}</span>${opts.map(([v,t])=>`<button data-${id}="${v}" aria-pressed="${val===v}">${t}</button>`).join('')}</div>`;
+{const _hb=hub;hub=function(...a){_hb(...a);const f=app.querySelector('.foot');if(!f)return;
+  f.insertAdjacentHTML('afterbegin',segHTML('thm','Theme',P.theme,[['auto','Auto'],['light','Light'],['dark','Dark']]));
+  f.querySelectorAll('[data-thm]').forEach(b=>b.onclick=()=>{P.theme=b.dataset.thm;save();applyTheme();f.querySelectorAll('[data-thm]').forEach(x=>x.setAttribute('aria-pressed',x===b))})}}
+
+/* --- reading help --- */
+if(!['off','kana','romaji'].includes(P.read))P.read='off';
+const READ_OPTS=[['off','Off'],['kana','Kana'],['romaji','Romaji']];
+const roLine=(c,cls='ro-help')=>`<span class="${cls}">${c.ro}</span>`;
+function readingHelp(){const mode=P.read;if(mode==='off')return;
+  if(S&&S.cur){const c=S.cur;
+    if(mode==='kana'){const b=app.querySelector('[data-kana]');if(b&&b.getAttribute('aria-pressed')!=='true')toggleKana(b);return}
+    app.querySelectorAll('.face.front .big,.q-prompt .big').forEach(el=>{if(!el.nextElementSibling||!el.nextElementSibling.classList.contains('ro-help'))el.insertAdjacentHTML('afterend',`<div class="ro-help">${c.ro}</div>`)});
+    if(S.opts&&!S.toEn)app.querySelectorAll('.opt').forEach((b,i)=>{const o=S.opts[i],t=b.querySelector('.t');if(o&&t&&!t.querySelector('.ro-help'))t.insertAdjacentHTML('beforeend',roLine(o))});
+    return}
+  if(A&&A.cur&&A.opts){const c=A.cur;
+    app.querySelectorAll('.q-prompt .big').forEach(el=>{const help=mode==='kana'?(hasKanji(c.jp)?'':null):c.ro;if(help&&!el.parentElement.querySelector('.ro-help'))el.insertAdjacentHTML('afterend',`<div class="ro-help">${help}</div>`)});
+    app.querySelectorAll('.opt').forEach((b,i)=>{const o=A.opts[i],t=b.querySelector('.t.jp');if(!o||!t||t.querySelector('.ro-help,.pk-kana'))return;
+      if(mode==='romaji')t.insertAdjacentHTML('beforeend',roLine(o));else if(hasKanji(o.jp))t.insertAdjacentHTML('beforeend',`<span class="ro-help jp">${o.kana}</span>`)});
+    if(mode==='romaji')app.querySelectorAll('.pk-kana').forEach((k,i)=>{const b=k.closest('.opt'),o=b&&A.opts[+b.dataset.i];if(o)k.textContent=o.ro})}}
+/* --- tap-to-hear on Japanese quiz answers (before you choose) --- */
+function quizEars(){if(!S||S.mode!=='quiz'||S.toEn||!S.opts||S.checked)return;
+  app.querySelectorAll('.opt').forEach((b,i)=>{const o=S.opts[i];if(!o||b.querySelector('.opt-say'))return;
+    const s=document.createElement('span');s.className='opt-say';s.setAttribute('role','button');s.setAttribute('aria-label','Hear '+o.ro);s.innerHTML=I.spk;
+    s.onclick=e=>{e.stopPropagation();speak(o.id)};b.appendChild(s)})}
+{const _r=render;render=function(){_r();try{readingHelp();quizEars()}catch(e){}}}
+{const _q=arcQ;arcQ=function(){_q();try{readingHelp()}catch(e){}}}
+{const _p=picQ;picQ=function(){_p();try{readingHelp()}catch(e){}}}
+/* the switch lives on every deck screen, under Flashcards / Quiz */
+{const _dv=deckView;deckView=function(...a){_dv(...a);const seg=app.querySelector('.seg');if(!seg)return;
+  seg.insertAdjacentHTML('afterend',segHTML('read','Reading help',P.read,READ_OPTS)+`<p class="read-note">${P.read==='romaji'?'Romaji appears under every Japanese word, so you can read it out loud.':P.read==='kana'?'Kana readings appear under kanji automatically.':'Turn on Kana or Romaji if you can\'t read Japanese script yet.'}</p>`);
+  app.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{P.read=b.dataset.read;save();deckView(PACK)})}}
+UISEL.tick+=',[data-thm],[data-read],.opt-say';
+
+/* ================= 案内 · welcome guide + "?" help on every screen =================
+   A 5-step tour (opens by itself on a brand-new profile, replayable from the hub banner) and a
+   short help sheet per screen. Hanamaru marks tips, daruma marks "watch out". */
+const HM=()=>`<span class="g-ico g-hm" aria-hidden="true">${hanamaru(1)}</span>`;
+const DM=()=>`<span class="g-ico g-dm" aria-hidden="true">${daruma(0,'')}</span>`;
+const tip=t=>`<div class="g-tip">${HM()}<p>${t}</p></div>`;
+const warn=t=>`<div class="g-tip g-warn">${DM()}<p>${t}</p></div>`;
+const TOUR=[
+ {jp:'ようこそ',t:'Welcome to KonichiWhat',art:'dar',body:`<p>Bite-size Japanese for getting around: station signs, menus, hotels and the phrases that hold them together.</p><p>Five quick screens, then you're on your way. You can replay this any time from the <b>Welcome guide</b> banner on the home screen.</p>`},
+ {jp:'デッキ',t:'Packs, topics, lessons',art:'decks',body:`<p>Pick a <b>pack</b> (like Back to Basics), then a <b>topic</b> (like Station signs). A lesson is 10 cards.</p>
+   <ul><li><b>Flashcards</b>: learn new words. Flip, then <i>Got it ✓</i> or <i>Not yet ↻</i>.</li><li><b>Quiz</b>: test yourself with 4 choices and 5 hearts.</li></ul>
+   <p>Words you know come back less often; tricky ones come back sooner.</p>${tip('Can\'t read Japanese script yet? On any deck, set <b>Reading help → Romaji</b> and every word gets its pronunciation underneath.')}`},
+ {jp:'遊び',t:'Arcade: just for fun',art:'arcade',body:`<p>Below the topics on each deck:</p><ul><li><b>Train departing</b>: answer before the doors close; trains get faster.</li><li><b>Pick-a-pic</b>: match pictures and words.</li></ul>${tip('Arcade games give XP but never change what counts as "learned". Play as much as you like.')}`},
+ {jp:'進歩',t:'Your progress',art:'progress',body:`<ul><li><b>XP & daily goal</b>: every right answer earns XP; 50 XP a day keeps your streak.</li><li><b>Week strip</b>: one dot per day, green when you practised.</li>
+   <li><b>Shinkansen journey</b>: your XP is kilometres. Ride from Tokyo to Hiroshima (894 km); every station has a fun fact. Set your flight date for a countdown.</li>
+   <li><b>Stamps</b>: one eki stamp for every word you master.</li><li><b>Charms</b>: achievements that pop out of gachapon capsules.</li></ul>`},
+ {jp:'道具',t:'Handy tools',art:'tools',body:`<ul><li><b>Dictionary</b>: counters, signs, question words and times. Search in English, romaji or kana; ★ a word to add it to <b>My words</b>.</li>
+   <li><b>Word map</b>: shows which common words you still need to practise, with a one-tap lesson.</li><li><b>?</b> in the top corner of every screen explains that screen.</li></ul>
+   ${warn('Progress lives only on this device. Use <b>Back up or restore</b> at the bottom of the home screen now and then.')}
+   <p class="g-start">Where to start? <b>Back to Basics → Station signs → Flashcards.</b></p>`}];
+const ART={dar:()=>`<div class="g-art">${daruma(darEyes(),'dar')}</div>`,
+ decks:()=>`<div class="g-art g-chips"><span style="background:#1c1c1e">基</span><span style="background:#d23b2a">食</span><span style="background:#3f6e6b">絵</span><span style="background:#2b4c7e">宿</span></div>`,
+ arcade:()=>`<div class="g-art g-icons"><svg viewBox="-30 -30 60 60">${ICONS.board}</svg><svg viewBox="-30 -30 60 60">${ICONS.frame}</svg></div>`,
+ progress:()=>`<div class="g-art g-icons"><svg viewBox="-30 -30 60 60">${PICS.shinkansen}</svg><svg viewBox="-30 -30 60 60">${ICONS.stamp||ICONS.stampbook||''}</svg></div>`,
+ tools:()=>`<div class="g-art g-icons"><span class="g-book">${BOOK_ICON}</span><svg viewBox="-30 -30 60 60">${PICS.hon}</svg></div>`};
+function guideTour(step=0){closeRef();const s=TOUR[step],last=step===TOUR.length-1;
+  const m=document.createElement('div');m.className='modal guide';m.id='refModal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-label','Welcome guide');
+  m.innerHTML=`<div class="modal-panel g-panel"><div class="modal-head"><span class="kicker">案内 · Guide ${step+1}/${TOUR.length}</span><button class="icon-btn" id="refClose" aria-label="Close guide">${I.x}</button></div>
+   ${ART[s.art]()}<h2><span class="jp">${s.jp}</span> ${s.t}</h2><div class="g-body">${s.body}</div>
+   <div class="g-dots">${TOUR.map((_,i)=>`<i class="${i===step?'on':''}"></i>`).join('')}</div>
+   <div class="row2">${step?`<button class="btn" id="gPrev">Back</button>`:`<button class="btn" id="gSkip">Skip tour</button>`}<button class="btn ${last?'go':'primary'}" id="gNext">${last?'Start learning':'Next'}</button></div></div>`;
+  document.body.appendChild(m);
+  const done=()=>{P.guideSeen=1;save();closeRef();const b=app.querySelector('.guide-banner .gb-new');if(b)b.remove()};
+  m.onclick=e=>{if(e.target===m)done()};m.querySelector('#refClose').onclick=done;
+  const sk=m.querySelector('#gSkip');if(sk)sk.onclick=done;
+  const pv=m.querySelector('#gPrev');if(pv)pv.onclick=()=>guideTour(step-1);
+  m.querySelector('#gNext').onclick=()=>{if(!last)return guideTour(step+1);done();deckView('basics')};
+  m.querySelector('#gNext').focus()}
+/* --- per-screen help --- */
+const HELP={
+ hub:['ホーム','Home station',`<p>Everything starts here.</p><ul><li><b>Continue</b> jumps back into your last pack.</li><li><b>Tiles</b>: stamps, journey, charms, kana chart, dictionary and My words.</li><li><b>Week strip</b>: green dots are days you practised; tap one for its XP.</li><li><b>Word map</b>: what to practise next.</li><li><b>Decks</b> at the bottom: pick a pack.</li></ul>${tip('Brand new? Start with <b>Back to Basics → Station signs</b>.')}${warn('Progress is saved on this device only. Back it up from the footer.')}`],
+ deck:['デッキ','Inside a pack',`<p>Choose <b>Flashcards</b> (learn) or <b>Quiz</b> (test), then tap a topic. <b>Mixed review</b> serves your weakest cards from the whole pack.</p><ul><li>Bars: <b>red</b> = mastered, <b>pink</b> = learning, grey = new.</li><li><b>Reading help</b>: show kana or romaji under every Japanese word.</li><li><b>Arcade</b> at the bottom: fun games for XP.</li></ul>${tip('New words? Do Flashcards first, then switch to Quiz.')}${warn('<i>Not yet ↻</i> doesn\'t skip: the card comes back later in the lesson, which is how it sticks.')}`],
+ dict:['辞書','Dictionary',`<ul><li><b>Tabs</b>: counters, signs, question words, time & dates.</li><li><b>Search</b> in English, romaji (kyo or kyou) or kana; it also searches your decks.</li><li>Tap an entry to open it, 🔊 to hear it, ★ to save it to <b>My words</b>.</li></ul>${tip('In the counter grids, <b>red cells</b> are the irregular sounds (いっぽん, さんぼん…). Those are the ones to drill.')}`],
+ wmap:['単語マップ','Word map',`<ul><li>Every tile is a word. <b>Colour</b> = how much you've practised it.</li><li><b>Gold dots</b> = how often you'll meet it in Japan (1–5).</li><li>The <b>Priority</b> strip lists common words you've barely practised; one tap starts a lesson with them.</li></ul>${tip('Tap any tile for its sound, how often you got it right and when you last saw it.')}`],
+ journey:['新幹線','Shinkansen journey',`<p>Your XP is kilometres on the bullet-train line from <b>Tokyo to Hiroshima</b> (894 km). Each station you reach unlocks a fun fact.</p>${tip('Set your <b>flight date</b> to get a countdown on the home screen and a 旅 mark on your departure day.')}`],
+ ach:['お守り','Charms',`<p>Charms are achievements. Each one comes out of a gachapon capsule.</p><ul><li>Tiers: wood, silver, gold, holographic.</li><li>Tap a charm to see how to earn it; <b>???</b> ones are secret.</li><li>Capsules you saved for later wait at the top of this book.</li></ul>`],
+ stamps:['駅スタンプ','Stamp book',`<p>Every word you <b>master</b> (answered right three times across lessons) earns its own eki stamp, like the stamp stations in real Japanese train stations.</p>${tip('Mixed review and the Word map are the fastest ways to fill empty pages.')}`],
+ kana:['かな','Kana chart',`<ul><li>Tap any character to hear it.</li><li>Switch between <b>hiragana</b> (native words) and <b>katakana</b> (foreign words like コーヒー).</li><li>Hide the romaji to test yourself.</li></ul>`],
+ train:['発車','Train departing',`<ul><li>Answer before the <b>doors close</b>; the red lamp flashes in the last seconds.</li><li>3 tickets = 3 misses. Every right answer makes the next train faster: Local → Rapid → Express → Limited Express → Shinkansen.</li><li>Fast answers give double XP.</li></ul>${tip('Arcade games never change what counts as learned, so mistakes here are free.')}`],
+ pic:['絵','Pick-a-pic',`<ul><li>15 rounds, 3 tickets.</li><li>Three kinds of question: picture → word, word → picture, and <b>listen → picture</b>.</li><li>3 right in a row doubles your XP.</li></ul>${tip('Each game favours pictures you haven\'t found yet. Try to find them all!')}`]};
+function helpSheet(key){const h=HELP[key];if(!h)return;closeRef();
+  const m=document.createElement('div');m.className='modal guide';m.id='refModal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-label','Help: '+h[1]);
+  m.innerHTML=`<div class="modal-panel g-panel g-help"><div class="modal-head"><div><span class="kicker">? · Help</span><h2><span class="jp">${h[0]}</span> ${h[1]}</h2></div><button class="icon-btn" id="refClose" aria-label="Close help">${I.x}</button></div>
+   <div class="g-body">${h[2]}</div><button class="btn wide" id="gTour">Replay the welcome guide</button></div>`;
+  document.body.appendChild(m);m.onclick=e=>{if(e.target===m)closeRef()};m.querySelector('#refClose').onclick=closeRef;m.querySelector('#gTour').onclick=()=>guideTour(0);SFX.rin()}
+const helpBtn=key=>`<button class="icon-btn help-btn" data-help="${key}" aria-label="Help for this screen" title="What's this screen?">?</button>`;
+function addHelp(key){if(app.querySelector('.help-btn'))return;
+  const spot=app.querySelector('.top .chips [data-mute],.sbar [data-mute]');if(spot)spot.insertAdjacentHTML('beforebegin',helpBtn(key))}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-help]');if(b){helpSheet(b.dataset.help)}});
+/* the hub banner: hanamaru · Welcome guide · daruma */
+function guideBanner(){const hero=app.querySelector('.hero');if(!hero||hero.querySelector('.guide-banner'))return;
+  hero.insertAdjacentHTML('beforeend',`<button class="guide-banner" id="guideBtn">${HM()}<span class="gb-txt"><b>Welcome guide${P.guideSeen?'':' <i class="gb-new">NEW</i>'}</b><small>はじめまして · How KonichiWhat works, in 1 minute</small></span>${DM()}</button>`);
+  hero.querySelector('#guideBtn').onclick=()=>guideTour(0)}
+/* hook screens */
+const HELPKEY={hub:'hub',deckView:'deck',dictView:'dict',wordMap:'wmap',journeyView:'journey',achBook:'ach',stampBook:'stamps',kanaView:'kana',arcStart:'train',picQ:'pic'};
+for(const [fn,key] of Object.entries(HELPKEY)){const orig=eval(fn);if(typeof orig!=='function')continue;
+  const w=function(...a){const r=orig.apply(this,a);try{if(key==='hub')guideBanner();addHelp(key)}catch(e){}return r};eval(fn+'=w')}
+/* a brand-new profile gets the tour once, after the first hub paint */
+if(!P.guideSeen&&!(P.xp>0))setTimeout(()=>{if(onHub()&&!document.getElementById('refModal'))guideTour(0)},700);
+UISEL.tick+=',.help-btn,#gPrev,#gNext,#gSkip,#gTour';UISEL.bamboo+=',.guide-banner';
+
+/* ================= かな道場 · Kana Dojo (hiragana + katakana from zero) =================
+   15 rows in order. Each row: learn (one card per character: sound + memory hook) → drill (10+ questions).
+   A row is cleared with at most 1 first-try mistake; that unlocks the next row. "Test out" skips the lesson
+   for the next locked row. XP counts toward the daily goal; word mastery is untouched. */
+const DOJO_ROWS0=[
+ ['a','あ row','あいうえお'],['k','か row','かきくけこ'],['s','さ row','さしすせそ'],['t','た row','たちつてと'],['n','な row','なにぬねの'],
+ ['h','は row','はひふへほ'],['m','ま row','まみむめも'],['y','や row','やゆよ'],['r','ら row','らりるれろ'],['w','わ・を・ん','わをん'],
+ ['g','が row','がぎぐげご'],['z','ざ row','ざじずぜぞ'],['d','だ row','だぢづでど'],['b','ば row','ばびぶべぼ'],['p','ぱ row','ぱぴぷぺぽ']];
+const DOJO_K=[...DOJO_ROWS0.map(([id,l,ks])=>['K'+id,toKata(l.slice(0,1))+l.slice(1),toKata(ks)]),['Kx','Look-alikes','シツソンノ']];
+DOJO_K[9][1]='ワ・ヲ・ン';
+const HIRA_ROWS=DOJO_ROWS0;let DJS='hira';
+const ROWS=()=>DJS==='kata'?DOJO_K:HIRA_ROWS;
+const sayK=k=>speakKana(toHira(k));
+const KRO={};[...KROWS,...DROWS].forEach(([,k,r])=>{const rs=r.split(' ');[...k].forEach((ch,i)=>{if(ch!=='_')KRO[ch]=rs[i]})});KRO['を']='wo (o)';KRO['ん']='n';Object.keys(KRO).forEach(h=>KRO[toKata(h)]=KRO[h]);
+const KHOOK={あ:'An apple with a cross-stitch: bite it and say "Ah!"',い:'Two eels swimming side by side: "ee".',う:'Someone with a little hat, feeling sick: "ooh".',え:'An exotic bird with a crest, asking "eh?"',お:'A golfer swinging, ball flying off: "Oh!"',
+ か:'A karate chop with an extra slash: "ka!"',き:'A key with two teeth: key → ki.',く:'A cuckoo\'s open beak: "ku-ku".',け:'A keg next to its tap: "ke(g)".',こ:'Two coins lying flat: "ko(in)".',
+ さ:'A samurai\'s bent sword: "sa".',し:'A fishing hook: "she" hooks a fish.',す:'A swing with a loop in the rope: "su(wing)".',せ:'A wide mouth with a fang, saying "say!"',そ:'Thread zig-zagging as you sew: "so(w)".',
+ た:'The letters t and a squashed together: "ta".',ち:'A backwards 5: "five cheese" → chi.',つ:'A wave rolling in: "tsu(nami)".',て:'A table seen side-on: "te".',と:'A toe with a splinter in it: "to(e)".',
+ な:'A nun kneeling with a cross: "na".',に:'A needle with two stitches next to it: "ni(dle)".',ぬ:'Noodles with a chopstick through them: "nu(dles)".',ね:'A cat (neko) curled up with its tail out: "ne".',の:'A no-entry sign: "no".',
+ は:'Someone laughing "ha!", with an h hidden inside.',ひ:'A big grin: "hee hee".',ふ:'Mount Fuji with clouds: "fu".',へ:'A small hill: "heh, that\'s it?"',ほ:'A Christmas tree with an h: "ho ho ho".',
+ ま:'Mama holding her baby up high: "ma".',み:'21 written in cursive: "me at 21".',む:'A cow with a horn going "moo".',め:'An eye with a lash (目 = me = eye).',も:'A fishhook with more worms: "mo(re)".',
+ や:'A yak with horns: "ya(k)".',ゆ:'A fish swimming: "yu". The onsen sign says ゆ!',よ:'A yo-yo hanging on its string.',
+ ら:'A rabbit sitting up: "ra(bbit)".',り:'Reeds by a river: "ri".',る:'A route with a loop at the end: "ru".',れ:'A cat stretched out, relaxed: "re".',ろ:'Like る but the road has no loop: "ro".',
+ わ:'Like ね but the tail curls in: a cat crying "wah".',を:'Only used as the particle を, sounding "o": 切符を = kippu o.',ん:'A cursive n: the only sound that ends on its own.'};
+Object.assign(KHOOK,{ア:'An axe chopping down: "a(xe)". アイス = aisu, ice cream.',イ:'An easel leaning: "ee". ワイン = wain, wine.',ウ:'う with a flat hat on: "oo". ウーロン茶 = ūroncha, oolong tea.',エ:'An elevator shaft, top and bottom floor: "e". エレベーター = erebētā.',オ:'A man flinging his arm out: "Oh!" オレンジ = orenji.',
+ カ:'か without its extra slash: "ka". カード = kādo, card: "can I pay by card?"',キ:'A key with three teeth: "ki". ケーキ = kēki, cake.',ク:'A cook\'s hat seen from the side: "ku(ck)". クーポン = kūpon, coupon.',ケ:'A tilted K: "ke". ケーキ = kēki, cake.',コ:'The corner of a box: "co(rner)". コーヒー = kōhī, coffee.',
+ サ:'A signpost with two poles: "sa". サラダ = sarada, salad.',シ:'A smiling face turned sideways: she smiles. The long stroke sweeps UP. タクシー = takushī.',ス:'A stick figure running for the train: "su". スイカ = Suica, the IC card!',セ:'Like せ with fewer bends: "se". セット = setto, set meal.',ソ:'A needle stitching DOWN: "so(w)". ソース = sōsu, sauce.',
+ タ:'ク with an extra stroke inside: "ta". タクシー = takushī, taxi.',チ:'A cheerleader holding a baton: "chee(r)". チーズ = chīzu, cheese.',ツ:'Three drops on top, falling DOWN to the right: "tsu". ツアー = tsuā, tour.',テ:'A telephone pole: "te(lephone)". テレビ = terebi, TV.',ト:'A totem pole with one branch: "to". トイレ = toire, toilet!',
+ ナ:'A knife cutting across: "na(ife)". バナナ = banana.',ニ:'Two lines, like 二 (two) = ni.',ヌ:'Chopsticks pinching a noodle: "nu(dle)". ヌードル = nūdoru.',ネ:'A necktie with a knot: "ne(cktie)". ネクタイ = nekutai.',ノ:'One slash: "No!" ノート = nōto, notebook.',
+ ハ:'Two legs walking apart: "ha". ハンバーガー = hanbāgā.',ヒ:'A high heel: "hi". コーヒー = kōhī, coffee.',フ:'The slope of Mt Fuji: "fu". フォーク = fōku, fork.',ヘ:'The same small hill as へ: "he". ヘルメット = herumetto.',ホ:'A cross with little legs: "ho(ly)". ホテル = hoteru, hotel.',
+ マ:'Mama\'s nose and chin: "ma". マスク = masuku, mask.',ミ:'Three lines, like me counting three: "mi". ミルク = miruku, milk.',ム:'A cow\'s face with one horn: "mu". ゲーム = gēmu, game.',メ:'An X marks the spot on a map: "me". メニュー = menyū, menu!',モ:'Like も without the hook: "mo". メモ = memo.',
+ ヤ:'Like や: a yak\'s horn: "ya". タイヤ = taiya, tyre.',ユ:'A U-turn: "yu". ユニクロ = Uniqlo.',ヨ:'A backwards E, stacked like yo-yos: "yo". ヨーグルト = yōguruto.',
+ ラ:'A rabbit\'s head with ears: "ra". ラーメン = rāmen!',リ:'Like り: reeds by a river: "ri". リュック = ryukku, backpack.',ル:'Two legs, one kicking out: "ru". ホテル = hoteru ends in ル.',レ:'A ladder leaning on a wall: "re". レシート = reshīto, receipt.',ロ:'A box, like 口 (mouth): "ro". ロッカー = rokkā, coin locker.',
+ ワ:'ウ without its hat: "wa". ワイファイ = waifai, Wi-Fi.',ヲ:'The particle を in katakana. You almost never see it, just recognise it.',ン:'A dot and a stroke sweeping UP: "n". ラーメン ends in ン.'});
+const KX={シ:'シ vs ツ: シ\'s dots sit on the LEFT, the long stroke sweeps UP.',ツ:'ツ vs シ: ツ\'s dots sit on TOP, the long stroke falls DOWN.',ソ:'ソ vs ン: ソ\'s short stroke is on TOP, the long stroke falls DOWN.',ン:'ン vs ソ: ン\'s dot is on the LEFT, the long stroke sweeps UP.',ノ:'ノ is a single slash, no dot at all.'};
+const DAK0={g:'The two dots ゛ (tenten) make k sounds voiced: か → が (ka → ga).',z:'゛ turns s into z: さ → ざ. Note じ is "ji".',d:'゛ turns t into d: た → だ. ぢ and づ sound like ji and zu and are rare.',b:'゛ turns h into b: は → ば.',p:'The little circle ゜ (maru) turns h into p: は → ぱ.'};
+const DAK=new Proxy({},{get:(o,id)=>{if(typeof id!=='string')return;if(id==='Kx')return 'Five look-alikes that trip everyone up. Watch where the dots sit and which way the long stroke goes.';
+  if(id[0]==='K'){const t=DAK0[id.slice(1)];return t&&(t.replace(/[\u3041-\u3096]/g,c=>toKata(c))+' '+({Kg:'ゲーム = gēmu, game.',Kz:'ジュース = jūsu, juice.',Kd:'ドア = doa, door.',Kb:'バス = basu, bus.',Kp:'パン = pan, bread.'})[id])}return DAK0[id]}});
+const DJ=()=>P.dojo||(P.dojo={cleared:{}});
+const rowIdx=id=>ROWS().findIndex(r=>r[0]===id);
+const clearedN=(rows=ROWS())=>rows.filter(r=>DJ().cleared[r[0]]).length;
+const nextRow=()=>ROWS().find(r=>!DJ().cleared[r[0]]);
+const learnedKana=upto=>ROWS().slice(0,upto+1).flatMap(r=>[...r[2]]);
+let DOJO=null;
+function dojoView(){S=null;arcKill();DOJO=null;sheet.innerHTML='';sheet.className='';closeRef();
+  const n=clearedN(),nx=nextRow();
+  app.innerHTML=topBar(true)+`<section class="pack-head dojo-head"><div class="ph-row"><div class="pack-badge big jp" style="background:#d23b2a">道</div>
+    <div><div class="kicker">かな道場 · Kana dojo</div><h1>Learn ${DJS==='kata'?'katakana':'hiragana'}</h1></div></div>
+    <div class="seg dj-seg" role="group" aria-label="Script"><button data-djs="hira" aria-pressed="${DJS==='hira'}"><span class="jp">ひらがな</span> ${clearedN(HIRA_ROWS)}/${HIRA_ROWS.length}</button><button data-djs="kata" aria-pressed="${DJS==='kata'}"><span class="jp">カタカナ</span> ${clearedN(DOJO_K)}/${DOJO_K.length}</button></div>
+    <p>${DJS==='kata'?'Katakana spells foreign words: menus, signs, ラーメン, コーヒー, ホテル. Same sounds as hiragana, sharper shapes. Every memory hook comes with a word you\'ll see in Japan.':'Learn to read Japanese script one row at a time: hear each character, get a memory hook, then drill it. Clear a row to unlock the next.'}</p>
+    ${progBar({n:ROWS().length,m:n,l:0,nw:ROWS().length-n},1)}<div class="legend"><span>${n} / ${ROWS().length} rows cleared</span><span class="pct-big">${Math.round(n/ROWS().length*100)}%</span></div>
+    <div class="row2"><button class="btn" data-go="kana" data-km="${DJS}">Kana chart</button>${n>=2?`<button class="btn blue" id="djReview">Review all</button>`:`<button class="btn" disabled>Review all (2 rows)</button>`}</div></section>
+   <div class="dojo-rows">${ROWS().map((r,i)=>{const done=!!DJ().cleared[r[0]],cur=nx&&nx[0]===r[0],locked=!done&&!cur;
+     return `<div class="drow2 ${done?'done':cur?'cur':'locked'}"><div class="dr-k jp">${[...r[2]].map(k=>`<span>${k}</span>`).join('')}</div>
+      <div class="dr-meta"><b>${r[1]}</b><small>${[...r[2]].map(k=>KRO[k].replace(' (o)','')).join(' ')}</small></div>
+      <div class="dr-act">${done?`<button class="btn" data-dl="${r[0]}">Practise</button>`
+        :cur?`<button class="btn primary" data-dl="${r[0]}">${DJ().learned&&DJ().learned[r[0]]?'Drill':'Start'}</button>`
+        :(i===rowIdx(nx?nx[0]:'')+1?`<button class="btn" data-dt="${r[0]}" title="Already know these?">Test out</button>`:`<span class="dr-lock">${I.lock}</span>`)}</div></div>`}).join('')}</div>`;
+  app.querySelector('#back').onclick=hub;
+  app.querySelectorAll('[data-djs]').forEach(b=>b.onclick=()=>{DJS=b.dataset.djs;DJ().script=DJS;save();dojoView()});
+  app.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>{const id=b.dataset.dl;DJ().learned&&DJ().learned[id]?dojoDrill(id):dojoLearn(id)});
+  app.querySelectorAll('[data-dt]').forEach(b=>b.onclick=()=>dojoDrill(b.dataset.dt,{testOut:1}));
+  const rv=app.querySelector('#djReview');if(rv)rv.onclick=()=>dojoDrill(null,{review:1});
+  addHelp('dojo');scrollTo(0,0)}
+/* learn: one card per character */
+function dojoLearn(id,i=0){const r=ROWS()[rowIdx(id)],ks=[...r[2]],k=ks[i];DOJO={mode:'learn',row:id};
+  app.innerHTML=`<div class="sbar"><button class="icon-btn" id="quit" aria-label="Back to dojo">${I.x}</button><div class="bar"><i style="width:${(i)/ks.length*100}%"></i></div>${muteBtn()}</div>
+   <div class="stage dojo-learn"><div class="prompt-label">New: ${r[1]} · ${i+1} / ${ks.length}</div>
+    <div class="dl-card"><button class="speak dl-say" aria-label="Hear it">${I.spk}</button><div class="dl-k jp">${k}</div><div class="dl-ro">${KRO[k]}</div></div>
+    ${i===0&&DAK[id]?`<div class="g-tip g-warn"><span class="g-ico">${daruma(0,'')}</span><p>${DAK[id]}</p></div>`:''}
+    ${(id==='Kx'?KX[k]:KHOOK[k])?`<div class="g-tip"><span class="g-ico g-hm">${hanamaru(1)}</span><p>${id==='Kx'?KX[k]:KHOOK[k]}</p></div>`:''}</div>`;
+  sheet.className='sheet';sheet.innerHTML=`<div class="sheet-in"><button class="btn primary wide" id="dlNext">${i<ks.length-1?'Next':'Start the drill'}</button></div>`;
+  app.querySelector('#quit').onclick=dojoView;app.querySelector('.dl-say').onclick=()=>sayK(k);
+  setTimeout(()=>{if(DOJO&&DOJO.mode==='learn')sayK(k)},250);
+  sheet.querySelector('#dlNext').onclick=()=>{if(i<ks.length-1)return dojoLearn(id,i+1);const d=DJ();d.learned=d.learned||{};d.learned[id]=1;save();dojoDrill(id)};
+  if(typeof addHelp==='function')addHelp('dojo')}
+/* drill */
+function dojoDrill(id,opt={}){let upto=id?rowIdx(id):-1;if(!id)ROWS().forEach((r,i)=>{if(DJ().cleared[r[0]])upto=i});
+  const own=id?[...ROWS()[rowIdx(id)][2]]:[],pool=learnedKana(upto);
+  let q=opt.review?shuffle(pool).slice(0,15):shuffle([...own,...own,...shuffle(pool.filter(k=>!own.includes(k))).slice(0,Math.max(2,10-own.length*2))]);
+  for(let i=1;i<q.length;i++)if(q[i]===q[i-1]){const j=q.findIndex((x,n)=>n>i&&x!==q[i]&&x!==q[i-1]);if(j>0)[q[i],q[j]]=[q[j],q[i]]}
+  DOJO={mode:'drill',row:id,opt,q:q.map(k=>({k})),i:0,first:0,wrongFirst:new Set(),xp:0,pool,total:q.length,combo:0};
+  sheet.innerHTML='';sheet.className='';dojoQ()}
+function dojoQ(){const D=DOJO;if(!D)return;if(D.i>=D.q.length)return dojoEnd();
+  const it=D.q[D.i],k=it.k,type=it.retry?it.type:['k2r','k2r','ear','r2k'][Math.random()*4|0];it.type=type;
+  const src=D.row==='Kx'?[...'シツソンノ']:D.pool,others=shuffle(src.filter(x=>x!==k&&KRO[x]!==KRO[k])).slice(0,3),opts=shuffle([k,...others]);D.opts=opts;D.ans=false;
+  const big=type==='k2r'?`<div class="dl-card sm"><div class="dl-k jp">${k}</div></div>`:type==='r2k'?`<div class="dl-card sm"><div class="dl-ro big-ro">${KRO[k]}</div></div>`:`<div class="pear"><button class="speak big-say" id="djSay" aria-label="Play again">${I.spk}</button></div>`;
+  app.innerHTML=`<div class="sbar"><button class="icon-btn" id="quit" aria-label="Back to dojo">${I.x}</button><div class="bar"><i style="width:${D.i/D.q.length*100}%"></i></div><div class="combo" id="combo" hidden></div>${muteBtn()}</div>
+   <div class="stage dojo-drill"><div class="prompt-label">${type==='k2r'?'How do you read this?':type==='r2k'?'Which one is it?':'Listen: which kana is it?'}</div>${big}
+   <div class="opts dj-opts">${opts.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${i+1}</span><span class="t ${type==='k2r'?'':'jp dj-k'}">${type==='k2r'?KRO[o]:o}</span></button>`).join('')}</div></div>`;
+  app.querySelector('#quit').onclick=dojoView;
+  const sy=app.querySelector('#djSay');if(sy)sy.onclick=()=>sayK(k);
+  if(type==='ear'||type==='r2k')setTimeout(()=>{if(DOJO===D&&!D.ans&&D.q[D.i]===it)sayK(k)},200);
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>dojoAnswer(+b.dataset.i));
+  if(typeof addHelp==='function')addHelp('dojo')}
+function dojoAnswer(i){const D=DOJO;if(!D||D.ans)return;D.ans=true;const it=D.q[D.i],k=it.k,ok=D.opts[i]===k;
+  const btns=[...app.querySelectorAll('.opt')],ri=D.opts.indexOf(k);btns.forEach(b=>b.disabled=true);btns[ri].classList.add('right');
+  if(ok){if(!it.retry){D.first++;D.xp+=1}D.combo++;SFX.right(D.combo);const p=center(btns[ri]);burst(p.x,p.y,14,8);if(!it.retry)floatText('+1 XP',p.x,p.top-10,'xp')}
+  else{D.combo=0;if(!it.retry)D.wrongFirst.add(k);btns[i].classList.add('wrong','shake');SFX.wrong();D.q.push({k,retry:1,type:it.type})}
+  setTimeout(()=>sayK(k),ok?150:250);
+  sheet.className='sheet anim '+(ok?'good':'bad');
+  sheet.innerHTML=`<div class="sheet-in"><div class="fb"><div class="dot"><span class="jp dj-fb">${k}</span></div><div style="flex:1;min-width:0"><h4>${ok?pickOne(['正解! Correct','いいね! Nice','すごい! Great']):'惜しい! Not quite'}</h4><p><span class="jp">${k}</span> = <b>${KRO[k]}</b>${ok?'':`<br><span style="opacity:.85">${(D.row==='Kx'&&KX[k])||KHOOK[k]||''}</span>`}</p></div></div>
+    <button class="btn ${ok?'go':'danger'} wide" id="djCont">Continue</button></div>`;
+  const at=D.i,go=()=>{clearTimeout(D.to);if(DOJO!==D||D.i!==at)return;sheet.innerHTML='';sheet.className='';D.i++;dojoQ()};
+  sheet.querySelector('#djCont').onclick=go;sheet.querySelector('#djCont').focus();if(ok)D.to=setTimeout(go,1100)}
+function dojoEnd(){const D=DOJO;DOJO=null;sheet.innerHTML='';sheet.className='';clearTimeout(D.to);
+  const firstTry=D.total-D.wrongFirst.size,passed=D.wrongFirst.size<=1,dj=DJ();let unlocked=null;
+  if(D.row&&passed&&!dj.cleared[D.row]){dj.cleared[D.row]=Date.now();dj.learned=dj.learned||{};dj.learned[D.row]=1;unlocked=nextRow()}
+  dj.drills=(dj.drills||0)+1;save();arcCommit(D.xp);
+  const r=D.row?ROWS()[rowIdx(D.row)]:null;
+  app.innerHTML=`<div class="done">${passed?`<div class="bouq">${hanamaru(D.wrongFirst.size?2:4)}</div>`:`<div class="dbig">${daruma(darEyes(),'dar roll')}</div>`}
+    <h2>${D.opt.review?'Review done':passed?(r?`<span class="jp">${r[1]}</span> cleared!`:'Cleared!'):'Almost there'}</h2>
+    <p class="kotowaza">${passed?(unlocked?`Next up: <b class="jp">${unlocked[1]}</b>`:(clearedN()===ROWS().length?`Every ${DJS==='kata'?'katakana':'hiragana'} row cleared. 素晴らしい!`:'Keep it fresh with a review now and then.')):`${D.wrongFirst.size} first-try mistakes. Clear a row with at most 1. 七転び八起き: try again!`}</p>
+    <div class="tiles"><div class="tile g"><b>First try</b><span>${firstTry}/${D.total}</span></div><div class="tile y"><b>XP</b><span>${I.bolt}${D.xp}</span></div><div class="tile o"><b>Rows</b><span>${clearedN()}/${ROWS().length}</span></div></div>
+    ${D.wrongFirst.size?`<div class="miss"><div class="label" style="background:none;padding:0">Tricky ones</div>${[...D.wrongFirst].map(k=>`<div class="miss-row" role="button" tabindex="0" data-k="${k}"><span class="jp">${k}</span><span>${KRO[k]}</span></div>`).join('')}</div>`:''}
+    <div class="actions">${unlocked?`<button class="btn primary wide" id="djNext">Learn the <span class="jp">${unlocked[1]}</span></button>`:passed?'':`<button class="btn primary wide" id="djAgain">Try again</button>`}<button class="btn wide" id="home">Back to dojo</button></div></div>`;
+  passed?SFX.win():SFX.lose();if(passed)burst(innerWidth/2,innerHeight*.3,60,13);
+  app.querySelectorAll('.miss-row').forEach(m=>m.onclick=()=>sayK(m.dataset.k));
+  const nb=app.querySelector('#djNext');if(nb)nb.onclick=()=>dojoLearn(unlocked[0]);
+  const ab=app.querySelector('#djAgain');if(ab)ab.onclick=()=>dojoDrill(D.row,D.opt);
+  app.querySelector('#home').onclick=dojoView;checkAch();playPending()}
+/* hub tile: the kana tile now opens the dojo (the chart is one tap away inside) */
+{const _he=hubExtras;hubExtras=function(){return _he().replace(/<button class="tile3" data-go="kana">[\s\S]*?<\/button>/,
+  `<button class="tile3 t-dojo" data-go="dojo"><span class="t3i jp" style="background:#d23b2a">道</span><b>${clearedN(HIRA_ROWS)+clearedN(DOJO_K)}<small>/${HIRA_ROWS.length+DOJO_K.length}</small></b><span>Kana dojo</span></button>`)}}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go="dojo"]');if(g){e.stopImmediatePropagation();dojoView()}},true);
+/* remember the last script */
+DJS=(P.dojo&&P.dojo.script)||'hira';
+/* help + charms */
+if(typeof HELP!=='undefined')HELP.dojo=['かな道場','Kana dojo',`<ul><li>Two tracks: <b>ひらがな</b> and <b>カタカナ</b>. Each unlocks row by row: あ, か, さ… then the ゛ and ゜ rows.</li><li>Katakana adds a <b>look-alikes</b> row (シ ツ ソ ン ノ) at the end.</li><li><b>Learn</b>: hear each character with a memory hook.</li><li><b>Drill</b>: read it, hear it, find it. Missed ones come back at the end.</li><li>Clear a row with at most <b>1 first-try mistake</b>.</li></ul>${tip('Already know a row? Use <b>Test out</b> on the next locked row.')}${tip('Then turn <b>Reading help → Kana</b> on your decks to practise reading real words.')}`];
+ICONS.brushk=`<path d="M-18 22L10 -6" stroke="${BR}" stroke-width="5" stroke-linecap="round"/><path d="M10 -6L22 -20Q26 -24 22 -26Q18 -26 14 -20L6 -10Z" fill="${OK_}"/>${tx(-6,6,'あ',18,OS)}`;
+ICONS.belt=`<path d="M-26 -4H26V6H-26Z" fill="${OK_}" ${sw(1.5)}/><path d="M-4 0L-14 22L-6 22L0 6L6 22L14 22L4 0Z" fill="${OK_}" ${sw(1.5)}/><rect x="-6" y="-7" width="12" height="16" rx="2" fill="${OK_}" ${sw(1.5)}/>${tx(0,4,'か',8,OY)}`;
+ICONS.brushK=ICONS.brushk.replace('>あ<','>ア<');ICONS.beltK=ICONS.belt.replace('>か<','>カ<');
+ICONS.twins=`<rect x="-26" y="-18" width="24" height="34" rx="4" fill="${OK_}" ${sw(1.5)}/><rect x="2" y="-18" width="24" height="34" rx="4" fill="${OK_}" ${sw(1.5)}/>${tx(-14,6,'シ',18,OS)}${tx(14,6,'ツ',18,OS)}`;
+GROUPS.dojo={name:'Kana Dojo',jp:'道',c1:'#d23b2a',c2:'#d23b2a',shape:'circle'};CORD.dojo='#d23b2a';
+Object.assign(ACH_ICON,{dj1:'brushk',dj5:'scroll',djall:'belt',kt1:'brushK',ktx:'twins',ktall:'beltK',kana2:'belt'});
+ACH.splice(ACH.findIndex(a=>a.id==='mall'),0,
+ {id:'dj1',g:'dojo',t:'b',name:'First Brushstroke',desc:'Clear the あ row in the Kana dojo.',glyph:'あ',test:()=>!!DJ().cleared.a},
+ {id:'dj5',g:'dojo',t:'s',name:'Halfway to Hiragana',desc:'Clear 5 hiragana rows in the Kana dojo.',glyph:'五',test:()=>clearedN(HIRA_ROWS)>=5,prog:()=>[Math.min(clearedN(HIRA_ROWS),5),5]},
+ {id:'djall',g:'dojo',t:'g',name:'Hiragana Black Belt',desc:'Clear every hiragana row in the Kana dojo, ゛ and ゜ included.',glyph:'段',test:()=>clearedN(HIRA_ROWS)>=HIRA_ROWS.length,prog:()=>[clearedN(HIRA_ROWS),HIRA_ROWS.length]},
+ {id:'kt1',g:'dojo',t:'b',name:'Sharp Edges',desc:'Clear the ア row of katakana.',glyph:'ア',test:()=>!!DJ().cleared.Ka},
+ {id:'ktx',g:'dojo',t:'s',name:'Spot the Difference',desc:'Clear the katakana look-alikes row: シ ツ ソ ン ノ.',glyph:'シ',test:()=>!!DJ().cleared.Kx},
+ {id:'ktall',g:'dojo',t:'g',name:'Katakana Black Belt',desc:'Clear every katakana row, look-alikes included. Menus hold no secrets now.',glyph:'片',test:()=>clearedN(DOJO_K)>=DOJO_K.length,prog:()=>[clearedN(DOJO_K),DOJO_K.length]},
+ {id:'kana2',g:'dojo',t:'p',name:'Two Scripts, One Brain',desc:'Clear every row of both hiragana and katakana.',glyph:'両',test:()=>clearedN(HIRA_ROWS)+clearedN(DOJO_K)>=HIRA_ROWS.length+DOJO_K.length});
+/* the kana chart, opened from the dojo, returns to the dojo */
+{const _kv=kanaView;let fromDojo=false;document.addEventListener('click',e=>{if(e.target.closest('.dojo-head [data-go="kana"]'))fromDojo=true},true);
+ kanaView=function(...a){if(fromDojo&&!a[0])a[0]=DJS;const r=_kv.apply(this,a);if(fromDojo){const b=app.querySelector('#back');if(b)b.onclick=()=>{fromDojo=false;dojoView()}}return r}}
+UISEL.bamboo+=',.t-dojo,[data-dl],[data-dt],#djReview,#djNext';UISEL.tick+=',.dl-say,#dlNext,#djCont,#djSay';
+if(typeof HELP!=='undefined'&&HELP.hub)HELP.hub[2]=HELP.hub[2].replace('kana chart','Kana dojo (learn hiragana)');
 
 /* ================= 動き · gentle motion =================
    1 screen slides (in = from the right, back = from the left)   2 XP chip counts up + progress bars grow from old → new
@@ -2885,7 +3226,7 @@ function inkToday(){const d=app.querySelector('.wdot.is-today');if(!d)return;con
 
 function afterScreen(key){slideIn(key);rollXP();growBars();if(key==='hub'){glideTrain();inkToday()}}
 /* hook every screen once; the first hub render only takes snapshots (nothing to animate yet) */
-const NAVS={hub:'hub',deckView:'deck',dictView:'dict',wordMap:'wmap',achBook:'ach',stampBook:'stamps',journeyView:'journey',kanaView:'kana',start:'lesson',arcStart:'arcade',picStart:'arcade',finish:'results',arcEnd:'results',picEnd:'results'};
+const NAVS={hub:'hub',deckView:'deck',dictView:'dict',wordMap:'wmap',achBook:'ach',stampBook:'stamps',journeyView:'journey',kanaView:'kana',start:'lesson',arcStart:'arcade',picStart:'arcade',finish:'results',arcEnd:'results',picEnd:'results',dojoView:'dojo',dojoLearn:'lesson',dojoEnd:'results'};
 for(const [fn,key] of Object.entries(NAVS)){const orig=window[fn]||eval(fn);if(typeof orig!=='function')continue;
   const wrapped=function(...a){const r=orig.apply(this,a);try{afterScreen(key)}catch(e){}return r};
   eval(fn+'=wrapped')}

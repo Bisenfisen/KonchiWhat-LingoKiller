@@ -1,6 +1,6 @@
 // KonichiWhat offline cache.
 // When you upload a new index.html, change VERSION (e.g. v1 -> v2) so phones fetch the update.
-const VERSION = 'konichiwhat-v9';
+const VERSION = 'konichiwhat-v10';
 const APP_FILES = [
   './',
   './index.html',
